@@ -4,10 +4,12 @@ namespace Vormkracht10\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
+use Vormkracht10\Analytics\Traits\MetricTrait;
 
 class Analytics
 {
-    use DateRangeTrait;
+    use DateRangeTrait,
+        MetricTrait;
 
     public ?int $propertyId = null;
 
@@ -58,7 +60,7 @@ class Analytics
             'property' => 'properties/' . $this->getPropertyId(),
             'date_ranges' => $this->dateRanges,
             // 'dimensions' => $dimensions,
-            // 'metrics' => $metrics,
+            'metrics' => $this->metrics,
             // 'filters' => $filters,
         ]);
 
