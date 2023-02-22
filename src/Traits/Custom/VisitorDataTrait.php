@@ -12,7 +12,7 @@ trait VisitorDataTrait
         $result = $this->setDateRange($period)
             ->addMetrics('averageSessionDuration')
             ->getReport()
-            ->table;
+            ->dataTable;
 
         return (float) Arr::first(Arr::flatten($result));
     }
