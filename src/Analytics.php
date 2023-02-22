@@ -7,6 +7,7 @@ use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 class Analytics
 {
     public ?int $propertyId = null;
+
     public ?string $credentials = null;
 
     public function __construct()
