@@ -97,7 +97,7 @@ trait VisitorDataTrait
         return $this->getViewsByPage($period, Direction::ASC);
     }
 
-    public function getViewsByPage(Period $period, Direction $direction): array
+    private function getViewsByPage(Period $period, Direction $direction): array
     {
         return $this->setDateRange($period)
             ->addMetrics('screenPageViews')
