@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Analytics\Traits\Endpoints;
+namespace Vormkracht10\Analytics\Traits\Entities;
 
 use Illuminate\Support\Arr;
 use Vormkracht10\Analytics\Enums\Direction;
