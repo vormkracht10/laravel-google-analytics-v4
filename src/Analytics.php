@@ -9,6 +9,7 @@ use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
+use Vormkracht10\Analytics\Traits\RowConfigTrait;
 
 class Analytics
 {
@@ -17,7 +18,8 @@ class Analytics
         DimensionTrait,
         OrderByTrait,
         MetricAggregationTrait,
-        FilterByTrait;
+        FilterByTrait,
+        RowConfigTrait;
         
     public ?int $propertyId = null;
 
@@ -73,6 +75,9 @@ class Analytics
             'metricAggregations' => $this->metricAggregations,
             'dimensionFilter' => $this->dimensionFilter,
             'metricFilter' => $this->metricFilter,
+            'limit' => $this->limit,
+            'offset' => $this->offset,
+            'keepEmptyRows' => $this->keepEmptyRows,
         ]);
 
         $rows = $response->getRows();
