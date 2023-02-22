@@ -8,6 +8,10 @@ use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
 use Vormkracht10\Analytics\Traits\MetricTrait;
 use Vormkracht10\Analytics\Traits\OrderByTrait;
+use Vormkracht10\Analytics\Traits\FilterByTrait;
+use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
+use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
+use Vormkracht10\Analytics\Traits\RowConfigTrait;
 
 class Analytics
 {
@@ -15,8 +19,12 @@ class Analytics
         MetricTrait,
         DimensionTrait,
         OrderByTrait,
+        MetricAggregationTrait,
+        FilterByTrait,
+        RowConfigTrait,
+        ResponseFormatterTrait,
         VisitorDataTrait;
-
+        
     public ?int $propertyId = null;
 
     public ?string $credentials = null;
@@ -58,7 +66,7 @@ class Analytics
         ]);
     }
 
-    public function getReport(): array
+    public function getReport(): AnalyticsResponse
     {
         $client = $this->getClient();
 
@@ -68,19 +76,14 @@ class Analytics
             'dimensions' => $this->dimensions,
             'metrics' => $this->metrics,
             'orderBys' => $this->orderBys,
+            'metricAggregations' => $this->metricAggregations,
+            'dimensionFilter' => $this->dimensionFilter,
+            'metricFilter' => $this->metricFilter,
+            'limit' => $this->limit,
+            'offset' => $this->offset,
+            'keepEmptyRows' => $this->keepEmptyRows,
         ]);
 
-        $rows = $response->getRows();
-
-        $result = [];
-
-        foreach ($rows as $row) {
-            $result[] = [
-                'dimensions' => $row->getDimensions(),
-                'metrics' => $row->getMetrics(),
-            ];
-        }
-
-        return $result;
+        return $this->formatResponse($response);
     }
 }
