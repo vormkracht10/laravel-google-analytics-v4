@@ -63,6 +63,29 @@ use Vormkracht10\Analytics\Period;
 
 // Get the average session duration for the last 7 days:
 $averageSessionDuration = Analytics::averageSessionDuration(Period::fromDays(7));
+
+// Get the average session duration for the last 7 days, grouped by date:
+$averageSessionDurationByDate = Analytics::averageSessionDurationByDate(Period::fromDays(7));
+```
+
+## Available methods
+
+### Average session duration
+```php
+// Get the average session duration for the last 7 days:
+$data = Analytics::averageSessionDuration(Period::fromDays(7));
+
+// Get the average session duration for the last 7 days, grouped by date:
+$data = Analytics::averageSessionDurationByDate(Period::fromDays(7));
+```
+
+### Total pageviews
+```php
+// Get the total pageviews for the last 14 days:
+$data = Analytics::totalPageviews(Period::fromDays(14));
+
+// Get the total pageviews for the last 14 days, grouped by date:
+$data = Analytics::totalPageviewsByDate(Period::fromDays(14));
 ```
 
 ## Testing
