@@ -2,11 +2,11 @@
 
 namespace Vormkracht10\Analytics;
 
-use Vormkracht10\Analytics\Traits\MetricTrait;
-use Vormkracht10\Analytics\Traits\OrderByTrait;
+use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\MetricTrait;
+use Vormkracht10\Analytics\Traits\OrderByTrait;
 
 class Analytics
 {
@@ -14,7 +14,7 @@ class Analytics
         MetricTrait,
         DimensionTrait,
         OrderByTrait;
-        
+
     public ?int $propertyId = null;
 
     public ?string $credentials = null;

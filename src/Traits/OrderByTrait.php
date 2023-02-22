@@ -1,13 +1,13 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics\Traits;
 
 use Google\Analytics\Data\V1beta\OrderBy;
-use Google\Analytics\Data\V1beta\OrderBy\MetricOrderBy;
 use Google\Analytics\Data\V1beta\OrderBy\DimensionOrderBy;
+use Google\Analytics\Data\V1beta\OrderBy\MetricOrderBy;
 
 trait OrderByTrait
-{    
+{
     public array $orderBys = [];
 
     public function orderByDimension(string $name, string $direction = 'ASC'): self
@@ -24,7 +24,7 @@ trait OrderByTrait
 
         return $this;
     }
-    
+
     public function orderByMetric(string $name, string $direction = 'ASC'): self
     {
         $metric = new MetricOrderBy([
