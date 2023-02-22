@@ -58,6 +58,9 @@ After you have created the service account, you need to download the credentials
 After you have done this, you can use the package like this:
 
 ```php
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
+
 // Get the average session duration for the last 7 days:
 $averageSessionDuration = Analytics::averageSessionDuration(Period::fromDays(7));
 ```
