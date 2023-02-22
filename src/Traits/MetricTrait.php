@@ -8,17 +8,16 @@ trait MetricTrait
 {
     public array $metrics = [];
 
-    public function addMetric(string $name, string $alias = null): self
+    public function addMetric(string $name): self
     {
         $this->metrics[] = new Metric([
             'name' => $name,
-            'alias' => $alias,
         ]);
 
         return $this;
     }
 
-    public function addMetrics(array $metrics): self
+    public function addMetrics(string ...$metrics): self
     {
         foreach ($metrics as $metric) {
             $this->addMetric($metric);
