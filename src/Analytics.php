@@ -7,6 +7,7 @@ use Vormkracht10\Analytics\Traits\OrderByTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
 
 class Analytics
@@ -15,7 +16,8 @@ class Analytics
         MetricTrait,
         DimensionTrait,
         OrderByTrait,
-        MetricAggregationTrait;
+        MetricAggregationTrait,
+        FilterByTrait;
         
     public ?int $propertyId = null;
 
@@ -69,6 +71,8 @@ class Analytics
             'metrics' => $this->metrics,
             'orderBys' => $this->orderBys,
             'metricAggregations' => $this->metricAggregations,
+            'dimensionFilter' => $this->dimensionFilter,
+            'metricFilter' => $this->metricFilter,
         ]);
 
         $rows = $response->getRows();
