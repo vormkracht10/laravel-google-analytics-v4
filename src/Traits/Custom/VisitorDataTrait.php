@@ -24,7 +24,7 @@ trait VisitorDataTrait
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
-     */ 
+     */
     public function getAverageSessionDurationByDate(Period $period): array
     {
         return $this->setDateRange($period)
@@ -39,7 +39,7 @@ trait VisitorDataTrait
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
-     */ 
+     */
     public function getTotalViews(Period $period): int
     {
         $result = $this->setDateRange($period)
@@ -53,7 +53,7 @@ trait VisitorDataTrait
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
-     */ 
+     */
     public function getTotalViewsByDate(Period $period): array
     {
         return $this->setDateRange($period)
