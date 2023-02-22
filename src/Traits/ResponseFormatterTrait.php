@@ -55,8 +55,6 @@ trait ResponseFormatterTrait
 
     private function getMetricAggregationsTable(RunReportResponse $response): array
     {
-        $table = [];
-
         $aggregationMethods = [
             'getTotals',
             'getMaximums',
@@ -78,6 +76,6 @@ trait ResponseFormatterTrait
             }
         }
 
-        return $table;
+        return [];
     }
 }
