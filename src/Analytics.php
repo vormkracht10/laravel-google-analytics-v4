@@ -3,6 +3,7 @@
 namespace Vormkracht10\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\Custom\VisitorDataTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
 use Vormkracht10\Analytics\Traits\MetricTrait;
@@ -13,7 +14,8 @@ class Analytics
     use DateRangeTrait,
         MetricTrait,
         DimensionTrait,
-        OrderByTrait;
+        OrderByTrait,
+        VisitorDataTrait;
 
     public ?int $propertyId = null;
 
@@ -22,7 +24,7 @@ class Analytics
     public function __construct()
     {
         $this->propertyId = config('google-analytics.property_id') ?? null;
-        $this->credentials = config('google-analytics.credentials_json') ?? null;
+        $this->credentials = config('google-analytics.credentials') ?? null;
     }
 
     public function setPropertyId(int $propertyId): self
