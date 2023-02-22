@@ -5,7 +5,9 @@ namespace Vormkracht10\Analytics;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\Entities\UserEngagement;
+use Vormkracht10\Analytics\Traits\Entities\Sessions;
+use Vormkracht10\Analytics\Traits\Entities\Users;
+use Vormkracht10\Analytics\Traits\Entities\Views;
 use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
 use Vormkracht10\Analytics\Traits\MetricTrait;
@@ -23,7 +25,9 @@ class Analytics
         FilterByTrait,
         RowConfigTrait,
         ResponseFormatterTrait,
-        UserEngagement;
+        Views,
+        Sessions,
+        Users;
 
     public ?int $propertyId = null;
 

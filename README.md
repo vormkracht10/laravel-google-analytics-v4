@@ -6,8 +6,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics)
 
 ## About Laravel Google Analytics
-Laravel Google Analytics is a Laravel package that allows you to easily integrate Google Analytics v4 into your Laravel application. With this package, you can track pageviews, events, ecommerce transactions, and more, all with the latest version of Google Analytics.
 
+Laravel Google Analytics is a Laravel package that allows you to easily integrate Google Analytics v4 into your Laravel application. With this package, you can track pageviews, events, ecommerce transactions, and more, all with the latest version of Google Analytics.
 
 ## Installation
 
@@ -51,7 +51,14 @@ return [
 ```
 
 ## Usage
-First you need to create a service account in the Google Cloud Console. You can find the instructions here: https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-php. 
+
+First you need to create a service account in the Google Cloud Console. You can find the instructions here: https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-php.
+
+After you have created the service account, you need to download the credentials and save them in the `storage/app/analytics` folder. You can change the location of the credentials in the config file if you want.
+
+After you have done this, you can use the package like this:
+
+First you need to create a service account in the Google Cloud Console. You can find the instructions here: https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-php.
 
 After you have created the service account, you need to download the credentials and save them in the `storage/app/analytics` folder. You can change the location of the credentials in the config file if you want.
 
@@ -66,6 +73,13 @@ $averageSessionDuration = Analytics::averageSessionDuration(Period::days(7));
 ```
 
 ### Available periods
+
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > main
+
 ```php
 // Set the period to the last x days:
 Period::days(1);
@@ -82,16 +96,8 @@ Period::years(4);
 
 ## Available methods
 
-### Average session duration
-```php
-// Get the average session duration for the last 7 days:
-$data = Analytics::averageSessionDuration(Period::days(7));
+### Pageviews
 
-// Get the average session duration for the last 7 days, grouped by date:
-$data = Analytics::averageSessionDurationByDate(Period::days(7));
-```
-
-### Total pageviews
 ```php
 // Get the total pageviews for the last 14 days:
 $data = Analytics::getTotalViews(Period::days(14));
@@ -107,6 +113,23 @@ $data = Analytics::getMostViewsByPage(Period::days(14));
 
 // Get the least viewed pages for the last 14 days:
 $data = Analytics::getLeastViewsByPage(Period::days(14));
+```
+
+### Sessions
+
+```php
+// Get the average session duration for the last 7 days:
+$data = Analytics::averageSessionDuration(Period::days(7));
+
+// Get the average session duration for the last 7 days, grouped by date:
+$data = Analytics::averageSessionDurationByDate(Period::days(7));
+```
+
+### Users
+
+```php
+// Get the total users for the last 5 weeks:
+$data = Analytics::getTotalUsers(Period::weeks(5));
 ```
 
 ## Testing
@@ -129,8 +152,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Bas van Dinther](https://github.com/vormkracht10)
-- [All Contributors](../../contributors)
+-   [Bas van Dinther](https://github.com/vormkracht10)
+-   [All Contributors](../../contributors)
 
 ## License
 
