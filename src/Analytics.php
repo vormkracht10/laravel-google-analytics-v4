@@ -3,9 +3,12 @@
 namespace Vormkracht10\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\DateRangeTrait;
 
 class Analytics
 {
+    use DateRangeTrait;
+
     public ?int $propertyId = null;
 
     public ?string $credentials = null;
@@ -45,5 +48,31 @@ class Analytics
         return new BetaAnalyticsDataClient([
             'credentials' => $this->getCredentials(),
         ]);
+    }
+
+    public function getReport(): array
+    {
+        $client = $this->getClient();
+
+        $response = $client->runReport([
+            'property' => 'properties/' . $this->getPropertyId(),
+            'date_ranges' => $this->dateRanges,
+            // 'dimensions' => $dimensions,
+            // 'metrics' => $metrics,
+            // 'filters' => $filters,
+        ]);
+
+        $rows = $response->getRows();
+
+        $result = [];
+
+        foreach ($rows as $row) {
+            $result[] = [
+                'dimensions' => $row->getDimensions(),
+                'metrics' => $row->getMetrics(),
+            ];
+        }
+
+        return $result;
     }
 }
