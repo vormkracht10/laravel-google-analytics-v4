@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics;
 
@@ -32,6 +32,4 @@ class AnalyticsResponse
 
         return $this;
     }
-
-
 }

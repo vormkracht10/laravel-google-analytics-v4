@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics\Traits;
 
@@ -8,6 +8,7 @@ use Vormkracht10\Analytics\AnalyticsResponse;
 trait ResponseFormatterTrait
 {
     public array $metricHeaders = [];
+
     public array $dimensionHeaders = [];
 
     public function formatResponse(RunReportResponse $response): AnalyticsResponse
@@ -34,7 +35,7 @@ trait ResponseFormatterTrait
     private function getTable(RunReportResponse $response): array
     {
         $table = [];
-        
+
         foreach ($response->getRows() as $row) {
             $arr = [];
 
