@@ -3,6 +3,7 @@
 namespace Vormkracht10\Analytics\Traits\Custom;
 
 use Illuminate\Support\Arr;
+use Vormkracht10\Analytics\Enums\Direction;
 use Vormkracht10\Analytics\Period;
 
 trait VisitorDataTrait
@@ -61,6 +62,47 @@ trait VisitorDataTrait
             ->addDimensions('date')
             ->orderByDimension('date')
             ->keepEmptyRows(true)
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */ 
+    public function getTotalViewsByPage(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pageTitle', 'fullPageUrl')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function getMostViewsByPage(Period $period): array
+    {
+        return $this->getViewsByPage($period, Direction::DESC);
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function getLeastViewsByPage(Period $period): array
+    {
+        return $this->getViewsByPage($period, Direction::ASC);
+    }
+
+    public function getViewsByPage(Period $period, Direction $direction): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pageTitle', 'fullPageUrl')
+            ->orderByMetric('screenPageViews', $direction)
             ->getReport()
             ->dataTable;
     }

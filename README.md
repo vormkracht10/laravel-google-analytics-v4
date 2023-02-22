@@ -62,7 +62,22 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the average session duration for the last 7 days:
-$averageSessionDuration = Analytics::averageSessionDuration(Period::fromDays(7));
+$averageSessionDuration = Analytics::averageSessionDuration(Period::days(7));
+```
+
+### Available periods
+```php
+// Set the period to the last x days:
+Period::days(1);
+
+// Set the period to the last x weeks:
+Period::weeks(2);
+
+// Set the period to the last x months:
+Period::months(3);
+
+// Set the period to the last x years:
+Period::years(4);
 ```
 
 ## Available methods
@@ -70,24 +85,29 @@ $averageSessionDuration = Analytics::averageSessionDuration(Period::fromDays(7))
 ### Average session duration
 ```php
 // Get the average session duration for the last 7 days:
-$data = Analytics::averageSessionDuration(Period::fromDays(7));
+$data = Analytics::averageSessionDuration(Period::days(7));
 
 // Get the average session duration for the last 7 days, grouped by date:
-$data = Analytics::averageSessionDurationByDate(Period::fromDays(7));
+$data = Analytics::averageSessionDurationByDate(Period::days(7));
 ```
 
 ### Total pageviews
 ```php
 // Get the total pageviews for the last 14 days:
-$data = Analytics::getTotalViews(Period::fromDays(14));
+$data = Analytics::getTotalViews(Period::days(14));
 
 // Get the total pageviews for the last 14 days, grouped by date:
-$data = Analytics::getTotalViewsByDate(Period::fromDays(14));
+$data = Analytics::getTotalViewsByDate(Period::days(14));
 
+// Get the total pageviews for the last 14 days, grouped by page:
+$data = Analytics::getTotalViewsByPage(Period::days(14));
 
+// Get the most viewed pages for the last 14 days:
+$data = Analytics::getMostViewsByPage(Period::days(14));
+
+// Get the least viewed pages for the last 14 days:
+$data = Analytics::getLeastViewsByPage(Period::days(14));
 ```
-
-
 
 ## Testing
 

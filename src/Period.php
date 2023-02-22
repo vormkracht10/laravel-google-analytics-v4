@@ -25,7 +25,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromDays(int $days): self
+    public static function days(int $days): self
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subDays($days);
@@ -33,7 +33,15 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromMonths(int $months): self
+    public static function weeks(int $weeks): self
+    {
+        $endDate = Carbon::today();
+        $startDate = Carbon::today()->subWeeks($weeks)->startOfDay();
+
+        return new self($startDate, $endDate);
+    }
+
+    public static function months(int $months): self
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subMonths($months)->startOfDay();
@@ -41,7 +49,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromYears(int $years): self
+    public static function years(int $years): self
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subYears($years)->startOfDay();
