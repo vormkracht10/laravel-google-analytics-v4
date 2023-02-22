@@ -1,12 +1,12 @@
 <?php
 
-namespace Vormkracht10\Analytics\Traits\Custom;
+namespace Vormkracht10\Analytics\Traits\Endpoints;
 
 use Illuminate\Support\Arr;
 use Vormkracht10\Analytics\Enums\Direction;
 use Vormkracht10\Analytics\Period;
 
-trait VisitorDataTrait
+trait UserEngagement
 {
     /**
      * @throws \Google\ApiCore\ApiException
