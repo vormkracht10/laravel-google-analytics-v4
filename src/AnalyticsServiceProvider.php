@@ -5,7 +5,6 @@ namespace Vormkracht10\Analytics;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Vormkracht10\Analytics\Commands\AnalyticsCommand;
 
 class AnalyticsServiceProvider extends PackageServiceProvider
 {
