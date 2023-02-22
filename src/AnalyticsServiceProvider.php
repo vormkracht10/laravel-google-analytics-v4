@@ -15,7 +15,7 @@ class AnalyticsServiceProvider extends PackageServiceProvider
             ->hasConfigFile();
 
         if (app()->runningUnitTests()) {
-            return; 
+            return;
         }
 
         $package->hasInstallCommand(function (InstallCommand $command) {
