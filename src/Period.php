@@ -25,26 +25,34 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromDays(int $days): self
+    public static function days(int $days): self
     {
-        $endDate = Carbon::now();
-        $startDate = $endDate->subDays($days)->startOfDay();
+        $endDate = Carbon::today();
+        $startDate = Carbon::today()->subDays($days);
 
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromMonths(int $months): self
+    public static function weeks(int $weeks): self
     {
-        $endDate = Carbon::now();
-        $startDate = $endDate->subMonths($months)->startOfDay();
+        $endDate = Carbon::today();
+        $startDate = Carbon::today()->subWeeks($weeks)->startOfDay();
 
         return new self($startDate, $endDate);
     }
 
-    public static function makeFromYears(int $years): self
+    public static function months(int $months): self
     {
-        $endDate = Carbon::now();
-        $startDate = $endDate->subYears($years)->startOfDay();
+        $endDate = Carbon::today();
+        $startDate = Carbon::today()->subMonths($months)->startOfDay();
+
+        return new self($startDate, $endDate);
+    }
+
+    public static function years(int $years): self
+    {
+        $endDate = Carbon::today();
+        $startDate = Carbon::today()->subYears($years)->startOfDay();
 
         return new self($startDate, $endDate);
     }
