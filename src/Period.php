@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics;
 
@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 class Period
 {
     public Carbon $startDate;
+
     public Carbon $endDate;
 
     final public function __construct(Carbon $startDate, Carbon $endDate)

@@ -59,7 +59,7 @@ class Analytics
         $client = $this->getClient();
 
         $response = $client->runReport([
-            'property' => 'properties/' . $this->getPropertyId(),
+            'property' => 'properties/'.$this->getPropertyId(),
             'date_ranges' => $this->dateRanges,
             'dimensions' => $this->dimensions,
             'metrics' => $this->metrics,

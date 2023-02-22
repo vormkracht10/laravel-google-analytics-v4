@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics\Traits;
 
 use Google\Analytics\Data\V1beta\DateRange;
 use Vormkracht10\Analytics\Period;
 
-trait DateRangeTrait 
+trait DateRangeTrait
 {
     public array $dateRanges = [];
 
