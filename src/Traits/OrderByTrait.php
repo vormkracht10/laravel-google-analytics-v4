@@ -20,8 +20,8 @@ trait OrderByTrait
         $this->orderBys = [
             (new OrderBy([
                 'dimension' => $dimension,
-                ]))->setDesc(Direction::DESC->value === $direction->value)
-            ];
+            ]))->setDesc(Direction::DESC->value === $direction->value),
+        ];
 
         return $this;
     }
@@ -35,7 +35,7 @@ trait OrderByTrait
         $this->orderBys = [
             (new OrderBy([
                 'metric' => $metric,
-            ]))->setDesc(Direction::DESC->value === $direction->value)
+            ]))->setDesc(Direction::DESC->value === $direction->value),
         ];
 
         return $this;
