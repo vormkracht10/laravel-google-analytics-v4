@@ -69,7 +69,7 @@ trait VisitorDataTrait
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
-     */ 
+     */
     public function getTotalViewsByPage(Period $period): array
     {
         return $this->setDateRange($period)
