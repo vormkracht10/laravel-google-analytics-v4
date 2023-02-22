@@ -58,6 +58,12 @@ After you have created the service account, you need to download the credentials
 
 After you have done this, you can use the package like this:
 
+First you need to create a service account in the Google Cloud Console. You can find the instructions here: https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-php.
+
+After you have created the service account, you need to download the credentials and save them in the `storage/app/analytics` folder. You can change the location of the credentials in the config file if you want.
+
+After you have done this, you can use the package like this:
+
 ```php
 use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
@@ -67,6 +73,12 @@ $averageSessionDuration = Analytics::averageSessionDuration(Period::days(7));
 ```
 
 ### Available periods
+
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > main
 
 ```php
 // Set the period to the last x days:
