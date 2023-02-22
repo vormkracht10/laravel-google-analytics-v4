@@ -6,10 +6,10 @@ use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\Custom\VisitorDataTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\MetricTrait;
-use Vormkracht10\Analytics\Traits\OrderByTrait;
 use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
+use Vormkracht10\Analytics\Traits\MetricTrait;
+use Vormkracht10\Analytics\Traits\OrderByTrait;
 use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
 use Vormkracht10\Analytics\Traits\RowConfigTrait;
 
@@ -24,7 +24,7 @@ class Analytics
         RowConfigTrait,
         ResponseFormatterTrait,
         VisitorDataTrait;
-        
+
     public ?int $propertyId = null;
 
     public ?string $credentials = null;

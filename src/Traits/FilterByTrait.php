@@ -1,19 +1,20 @@
-<?php 
+<?php
 
 namespace Vormkracht10\Analytics\Traits;
 
 use Google\Analytics\Data\V1beta\Filter;
+use Google\Analytics\Data\V1beta\Filter\BetweenFilter;
 use Google\Analytics\Data\V1beta\Filter\InListFilter;
+use Google\Analytics\Data\V1beta\Filter\NumericFilter;
 use Google\Analytics\Data\V1beta\Filter\StringFilter;
 use Google\Analytics\Data\V1beta\FilterExpression;
 use Google\Analytics\Data\V1beta\FilterExpressionList;
-use Google\Analytics\Data\V1beta\Filter\BetweenFilter;
-use Google\Analytics\Data\V1beta\Filter\NumericFilter;
 use Google\Analytics\Data\V1beta\NumericValue;
 
 trait FilterByTrait
 {
     public ?FilterExpression $dimensionFilter = null;
+
     public ?FilterExpression $metricFilter = null;
 
     public function whereDimension(string $field, int $matchType, int|string|float $value, bool $caseSensitive = false): self
@@ -74,7 +75,7 @@ trait FilterByTrait
             $string = new StringFilter([
                 'match_type' => $dimension[3] ?? false,
                 'value' => $dimension[2],
-                'case_sensitive' => $dimension[1]
+                'case_sensitive' => $dimension[1],
             ]);
 
             $filter = new Filter([
