@@ -2,16 +2,18 @@
 
 namespace Vormkracht10\Analytics;
 
-use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\MetricTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\MetricTrait;
+use Vormkracht10\Analytics\Traits\OrderByMetricTrait;
+use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 
 class Analytics
 {
     use DateRangeTrait,
         MetricTrait,
-        DimensionTrait;
+        DimensionTrait,
+        OrderByMetricTrait;
 
     public ?int $propertyId = null;
 
@@ -63,7 +65,7 @@ class Analytics
             'date_ranges' => $this->dateRanges,
             'dimensions' => $this->dimensions,
             'metrics' => $this->metrics,
-            // 'filters' => $filters,
+            'orderBys' => $this->orderBys,
         ]);
 
         $rows = $response->getRows();
