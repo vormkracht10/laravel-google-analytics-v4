@@ -9,6 +9,7 @@ use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
+use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
 use Vormkracht10\Analytics\Traits\RowConfigTrait;
 
 class Analytics
@@ -19,7 +20,8 @@ class Analytics
         OrderByTrait,
         MetricAggregationTrait,
         FilterByTrait,
-        RowConfigTrait;
+        RowConfigTrait,
+        ResponseFormatterTrait;
         
     public ?int $propertyId = null;
 
@@ -62,7 +64,7 @@ class Analytics
         ]);
     }
 
-    public function getReport(): array
+    public function getReport(): AnalyticsResponse
     {
         $client = $this->getClient();
 
@@ -80,17 +82,6 @@ class Analytics
             'keepEmptyRows' => $this->keepEmptyRows,
         ]);
 
-        $rows = $response->getRows();
-
-        $result = [];
-
-        foreach ($rows as $row) {
-            $result[] = [
-                'dimensions' => $row->getDimensions(),
-                'metrics' => $row->getMetrics(),
-            ];
-        }
-
-        return $result;
+        return $this->formatResponse($response);
     }
 }
