@@ -84,7 +84,7 @@ Period::years(4);
 
 ## Available methods
 
-## Demographic Analytics
+### Demographic Analytics
 
 Methods to retrieve demographic analytics data for your website or application. You can use these methods to get information such as the most used languages, total users by city or country and total users per gender. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
 
