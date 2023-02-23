@@ -214,7 +214,6 @@ trait ViewsAnalytics
 
         return $this->getReport($googleAnalytics)
             ->dataTable;
-
     }
 
     /**

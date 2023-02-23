@@ -20,8 +20,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -35,8 +35,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('browser');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -52,8 +52,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -67,8 +67,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('operatingSystem');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -84,8 +84,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -99,8 +99,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('deviceCategory');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -116,8 +116,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -131,8 +131,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceBranding');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -148,8 +148,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -163,8 +163,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceModel');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -180,8 +180,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -195,8 +195,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('mobileInputSelector');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -212,8 +212,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -227,8 +227,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceInfo');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -244,8 +244,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -259,8 +259,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceMarketingName');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -276,8 +276,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -291,8 +291,8 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('screenResolution');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -308,8 +308,8 @@ trait DevicesAnalytics
             ->orderByMetric('totalUsers', Direction::DESC)
             ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
@@ -323,7 +323,7 @@ trait DevicesAnalytics
             ->addMetrics('totalUsers')
             ->addDimensions('platform');
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 }
