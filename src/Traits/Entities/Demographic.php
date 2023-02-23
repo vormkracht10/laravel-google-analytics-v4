@@ -11,7 +11,7 @@ trait Demographic
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByLanguage(Period $period, int $limit): array
+    public function getTopUsersByLanguage(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -39,7 +39,7 @@ trait Demographic
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByCountry(Period $period, int $limit): array
+    public function getTopUsersByCountry(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -67,7 +67,7 @@ trait Demographic
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByCity(Period $period, int $limit): array
+    public function getTopUsersByCity(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')

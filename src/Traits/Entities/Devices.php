@@ -11,7 +11,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByBrowser(Period $period, int $limit): array
+    public function getTopUsersByBrowser(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -39,7 +39,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByOperatingSystem(Period $period, int $limit): array
+    public function getTopUsersByOperatingSystem(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -67,7 +67,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByDeviceCategory(Period $period, int $limit): array
+    public function getTopUsersByDeviceCategory(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -95,7 +95,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByMobileDeviceBranding(Period $period, int $limit): array
+    public function getTopUsersByMobileDeviceBranding(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -123,7 +123,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByMobileDeviceModel(Period $period, int $limit): array
+    public function getTopUsersByMobileDeviceModel(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -151,7 +151,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByMobileInputSelector(Period $period, int $limit): array
+    public function getTopUsersByMobileInputSelector(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -179,7 +179,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByMobileDeviceInfo(Period $period, int $limit): array
+    public function getTopUsersByMobileDeviceInfo(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -207,7 +207,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByMobileDeviceMarketingName(Period $period, int $limit): array
+    public function getTopUsersByMobileDeviceMarketingName(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -235,7 +235,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByScreenResolution(Period $period, int $limit): array
+    public function getTopUsersByScreenResolution(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -263,7 +263,7 @@ trait Devices
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUsersByPlatform(Period $period, int $limit): array
+    public function getTopUsersByPlatform(Period $period, int $limit = 10): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')

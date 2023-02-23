@@ -54,7 +54,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostViewsByPage(Period $period): array
+    public function getTopViewsByPage(Period $period): array
     {
         return $this->getViewsByPage($period, Direction::DESC);
     }

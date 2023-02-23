@@ -86,7 +86,7 @@ Period::years(4);
 
 ### Demographic Analytics
 
-Methods to retrieve demographic analytics data for your website or application. You can use these methods to get information such as the most used languages, total users by city or country and total users per gender. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
+Methods to retrieve demographic analytics data for your website or application. You can use these methods to get information such as the top used languages, total users by city or country and total users per gender. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
 
 Here are some examples of how to use the methods:
 
@@ -94,20 +94,20 @@ Here are some examples of how to use the methods:
 use Analytics\Period;
 use Analytics\Analytics;
 
-// Get the most users by language for the last 7 weeks, limit to top 10:
-$data = Analytics::getMostUsersByLanguage(period: Period::weeks(7), limit: 10);
+// Get the top users by language for the last 7 weeks, limit to top 10:
+$data = Analytics::getTopUsersByLanguage(period: Period::weeks(7), limit: 10);
 
 // Get the total users by language for the last 7 weeks:
 $data = Analytics::getTotalUsersByLanguage(Period::weeks(7));
 
-// Get the most users by city for the last 7 weeks, limit to top 5:
-$data = Analytics::getMostUsersByCity(period: Period::weeks(7), limit: 5);
+// Get the top users by city for the last 7 weeks, limit to top 5:
+$data = Analytics::getTopUsersByCity(period: Period::weeks(7), limit: 5);
 
 // Get the total users by city for the last 7 weeks:
 $data = Analytics::getTotalUsersByCity(Period::weeks(7));
 
-// Get the most users by country for the last 7 weeks, limit to top 10:
-$data = Analytics::getMostUsersByCountry(period: Period::weeks(7), limit: 10);
+// Get the top users by country for the last 7 weeks, limit to top 10:
+$data = Analytics::getTopUsersByCountry(period: Period::weeks(7), limit: 10);
 
 // Get the total users by country for the last 7 weeks:
 $data = Analytics::getTotalUsersByCountry(Period::weeks(7));
@@ -121,7 +121,7 @@ $data = Analytics::getTotalUsersByAgeGroup(Period::weeks(7));
 
 ### Device and OS Analytics
 
-Methods to retrieve device and operating system analytics data for your website or application. You can use these methods to get information such as the most popular browsers, screen resolutions, and mobile devices used by your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
+Methods to retrieve device and operating system analytics data for your website or application. You can use these methods to get information such as the top popular browsers, screen resolutions, and mobile devices used by your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
 
 Here are some examples of how to use the methods:
 
@@ -129,20 +129,20 @@ Here are some examples of how to use the methods:
 use Analytics\Period;
 use Analytics\Analytics;
 
-// Get the most users by device category for the last 1 year:
-$data = Analytics::getMostUsersByDeviceCategory(Period::years(1));
+// Get the top users by device category for the last 1 year:
+$data = Analytics::getTopUsersByDeviceCategory(Period::years(1));
 
-// Get the most users by operating system for the last 1 year:
-$data = Analytics::getMostUsersByOperatingSystem(Period::years(1));
+// Get the top users by operating system for the last 1 year:
+$data = Analytics::getTopUsersByOperatingSystem(Period::years(1));
 
-// Get the most users by browser for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByBrowser(period: Period::years(1), limit: 10);
+// Get the top users by browser for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByBrowser(period: Period::years(1), limit: 10);
 
 // Get the total users by browser for the last 1 year:
 $data = Analytics::getTotalUsersByBrowser(Period::years(1));
 
-// Get the most users by screen resolution for the last 1 year, limit to top 5:
-$data = Analytics::getMostUsersByScreenResolution(period: Period::years(1), limit: 5);
+// Get the top users by screen resolution for the last 1 year, limit to top 5:
+$data = Analytics::getTopUsersByScreenResolution(period: Period::years(1), limit: 5);
 
 // Get the total users by operating system for the last 1 year:
 $data = Analytics::getTotalUsersByOperatingSystem(Period::years(1));
@@ -150,32 +150,32 @@ $data = Analytics::getTotalUsersByOperatingSystem(Period::years(1));
 // Get the total users by device category for the last 1 year:
 $data = Analytics::getTotalUsersByDeviceCategory(Period::years(1));
 
-// Get the most users by mobile device branding for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceBranding(period: Period::years(1), limit: 10);
+// Get the top users by mobile device branding for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByMobileDeviceBranding(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device branding for the last 1 year:
 $data = Analytics::getTotalUsersByMobileDeviceBranding(Period::years(1));
 
-// Get the most users by mobile device model for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceModel(period: Period::years(1), limit: 10);
+// Get the top users by mobile device model for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByMobileDeviceModel(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device model for the last 1 year:
 $data = Analytics::getTotalUsersByMobileDeviceModel(Period::years(1));
 
-// Get the most users by mobile input selector for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileInputSelector(period: Period::years(1), limit: 10);
+// Get the top users by mobile input selector for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByMobileInputSelector(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile input selector for the last 1 year:
 $data = Analytics::getTotalUsersByMobileInputSelector(Period::years(1));
 
-// Get the most users by mobile device info for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceInfo(period: Period::years(1), limit: 10);
+// Get the top users by mobile device info for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByMobileDeviceInfo(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device info for the last 1 year:
 $data = Analytics::getTotalUsersByMobileDeviceInfo(Period::years(1));
 
-// Get the most users by mobile device marketing name for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceMarketingName(period: Period::years(1), limit: 10);
+// Get the top users by mobile device marketing name for the last 1 year, limit to top 10:
+$data = Analytics::getTopUsersByMobileDeviceMarketingName(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device marketing name for the last 1 year:
 $data = Analytics::getTotalUsersByMobileDeviceMarketingName(Period::years(1));
@@ -200,8 +200,8 @@ $data = Analytics::getTotalViewsByDate(Period::days(14));
 // Get the total pageviews for the last 14 days, grouped by page:
 $data = Analytics::getTotalViewsByPage(Period::days(14));
 
-// Get the most viewed pages for the last 14 days:
-$data = Analytics::getMostViewsByPage(Period::days(14));
+// Get the top viewed pages for the last 14 days:
+$data = Analytics::getTopViewsByPage(Period::days(14));
 
 // Get the least viewed pages for the last 14 days:
 $data = Analytics::getLeastViewsByPage(Period::days(14));
