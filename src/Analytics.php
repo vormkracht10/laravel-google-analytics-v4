@@ -3,35 +3,20 @@
 namespace Vormkracht10\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
-use Vormkracht10\Analytics\Traits\DateRangeTrait;
-use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\Entities\Demographic;
-use Vormkracht10\Analytics\Traits\Entities\Devices;
-use Vormkracht10\Analytics\Traits\Entities\Sessions;
-use Vormkracht10\Analytics\Traits\Entities\Users;
-use Vormkracht10\Analytics\Traits\Entities\Views;
-use Vormkracht10\Analytics\Traits\FilterByTrait;
-use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
-use Vormkracht10\Analytics\Traits\MetricTrait;
-use Vormkracht10\Analytics\Traits\OrderByTrait;
-use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
-use Vormkracht10\Analytics\Traits\RowConfigTrait;
+use Vormkracht10\Analytics\Service\GoogleAnalyticsService;
+use Vormkracht10\Analytics\Traits\Analytics\UsersAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\ViewsAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\DevicesAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\SessionsAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\DemographicAnalytics;
 
-class Analytics
+class Analytics extends GoogleAnalyticsService
 {
-    use DateRangeTrait,
-        MetricTrait,
-        DimensionTrait,
-        OrderByTrait,
-        MetricAggregationTrait,
-        FilterByTrait,
-        RowConfigTrait,
-        ResponseFormatterTrait,
-        Views,
-        Sessions,
-        Users,
-        Devices,
-        Demographic;
+    use ViewsAnalytics,
+        SessionsAnalytics,
+        UsersAnalytics,
+        DevicesAnalytics,
+        DemographicAnalytics;
 
     public ?int $propertyId = null;
 

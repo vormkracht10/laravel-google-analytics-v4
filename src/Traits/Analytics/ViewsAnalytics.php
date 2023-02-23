@@ -1,12 +1,12 @@
 <?php
 
-namespace Vormkracht10\Analytics\Traits\Entities;
+namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Illuminate\Support\Arr;
 use Vormkracht10\Analytics\Enums\Direction;
 use Vormkracht10\Analytics\Period;
 
-trait Views
+trait ViewsAnalytics
 {
     /**
      * @throws \Google\ApiCore\ApiException
