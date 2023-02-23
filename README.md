@@ -91,8 +91,8 @@ Methods to retrieve demographic analytics data for your website or application. 
 Here are some examples of how to use the methods:
 
 ```php
-use Analytics\Period;
-use Analytics\Analytics;
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
 
 // Get the top users by language for the last 7 weeks, limit to top 10:
 $data = Analytics::getTopUsersByLanguage(period: Period::weeks(7), limit: 10);
@@ -126,8 +126,8 @@ Methods to retrieve device and operating system analytics data for your website 
 Here are some examples of how to use the methods:
 
 ```php
-use Analytics\Period;
-use Analytics\Analytics;
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
 
 // Get the top users by device category for the last 1 year:
 $data = Analytics::getTopUsersByDeviceCategory(Period::years(1));
@@ -188,8 +188,8 @@ Methods to retrieve pageview analytics data for your website or application. You
 Here are some examples of how to use the methods:
 
 ```php
-use Analytics\Period;
-use Analytics\Analytics;
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
 
 // Get the total pageviews for the last 14 days:
 $data = Analytics::getTotalViews(Period::days(14));
@@ -214,8 +214,8 @@ Methods to retrieve session duration analytics data for your website or applicat
 Here are some examples of how to use the methods:
 
 ```php
-use Analytics\Period;
-use Analytics\Analytics;
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
 
 // Get the average session duration for the last 7 days:
 $data = Analytics::averageSessionDuration(Period::days(7));
@@ -231,8 +231,8 @@ Methods to retrieve user analytics data for your website or application. You can
 Here are some examples of how to use the methods:
 
 ```php
-use Analytics\Period;
-use Analytics\Analytics;
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
 
 // Get the total users for the last 5 weeks:
 $data = Analytics::getTotalUsers(Period::weeks(5));
