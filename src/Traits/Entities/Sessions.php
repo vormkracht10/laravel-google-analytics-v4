@@ -11,7 +11,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAverageSessionDuration(Period $period): float
+    public function averageSessionDuration(Period $period): float
     {
         $result = $this->setDateRange($period)
             ->addMetrics('averageSessionDuration')
@@ -25,7 +25,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAverageSessionDurationByDate(Period $period): array
+    public function averageSessionDurationByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('averageSessionDuration')
@@ -40,7 +40,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAveragePageViewsPerSession(Period $period): float
+    public function averagePageViewsPerSession(Period $period): float
     {
         $result = $this->setDateRange($period)
             ->addMetrics('screenPageViewsPerSession')
@@ -54,7 +54,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAveragePageViewsPerSessionByDate(Period $period): array
+    public function averagePageViewsPerSessionByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('screenPageViewsPerSession')
@@ -69,7 +69,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAverageSessionDurationInSeconds(Period $period): float
+    public function averageSessionDurationInSeconds(Period $period): float
     {
         $result = $this->setDateRange($period)
             ->addMetrics('averageSessionDuration')
@@ -83,7 +83,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getAverageSessionDurationInSecondsByDate(Period $period): array
+    public function averageSessionDurationInSecondsByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('averageSessionDuration')
@@ -98,7 +98,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getBounceRate(Period $period): float
+    public function bounceRate(Period $period): float
     {
         $result = $this->setDateRange($period)
             ->addMetrics('bounceRate')
@@ -112,7 +112,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getBounceRateByDate(Period $period): array
+    public function bounceRateByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('bounceRate')
@@ -127,7 +127,7 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getBounceRateByPage(Period $period): array
+    public function bounceRateByPage(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('bounceRate')

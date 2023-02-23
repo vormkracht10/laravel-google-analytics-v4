@@ -11,7 +11,7 @@ trait Users
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalUsers(Period $period): int
+    public function totalUsers(Period $period): int
     {
         $result = $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -25,7 +25,7 @@ trait Users
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalUsersByDate(Period $period): array
+    public function totalUsersByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -38,7 +38,7 @@ trait Users
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalUsersBySessionSource(Period $period): array
+    public function totalUsersBySessionSource(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -51,7 +51,7 @@ trait Users
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalUsersBySessionMedium(Period $period): array
+    public function totalUsersBySessionMedium(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
@@ -64,7 +64,7 @@ trait Users
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalUsersBySessionDevice(Period $period): array
+    public function totalUsersBySessionDevice(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('totalUsers')
