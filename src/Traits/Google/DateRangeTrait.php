@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\Analytics\Traits;
+namespace Vormkracht10\Analytics\Traits\Google;
 
 use Google\Analytics\Data\V1beta\DateRange;
 use Vormkracht10\Analytics\Period;

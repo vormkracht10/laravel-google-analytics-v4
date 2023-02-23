@@ -2,14 +2,14 @@
 
 namespace Vormkracht10\Analytics\Service;
 
-use Vormkracht10\Analytics\Traits\DateRangeTrait;
-use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\FilterByTrait;
-use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
-use Vormkracht10\Analytics\Traits\MetricTrait;
-use Vormkracht10\Analytics\Traits\OrderByTrait;
+use Vormkracht10\Analytics\Traits\Google\MetricTrait;
+use Vormkracht10\Analytics\Traits\Google\OrderByTrait;
+use Vormkracht10\Analytics\Traits\Google\FilterByTrait;
+use Vormkracht10\Analytics\Traits\Google\DateRangeTrait;
+use Vormkracht10\Analytics\Traits\Google\DimensionTrait;
+use Vormkracht10\Analytics\Traits\Google\RowConfigTrait;
 use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
-use Vormkracht10\Analytics\Traits\RowConfigTrait;
+use Vormkracht10\Analytics\Traits\Google\MetricAggregationTrait;
 
 class GoogleAnalyticsService
 {
