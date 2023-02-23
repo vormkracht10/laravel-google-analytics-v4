@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics\Traits\Entities;
 
 use Illuminate\Support\Arr;
-use Vormkracht10\Analytics\Enums\Direction;
 use Vormkracht10\Analytics\Period;
 
 trait Users
