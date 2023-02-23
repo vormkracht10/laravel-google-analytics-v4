@@ -12,7 +12,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalViews(Period $period): int
+    public function totalViews(Period $period): int
     {
         $result = $this->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -26,7 +26,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalViewsByDate(Period $period): array
+    public function totalViewsByDate(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -41,7 +41,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTotalViewsByPage(Period $period): array
+    public function totalViewsByPage(Period $period): array
     {
         return $this->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -54,7 +54,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getTopViewsByPage(Period $period): array
+    public function topViewsByPage(Period $period): array
     {
         return $this->getViewsByPage($period, Direction::DESC);
     }
@@ -63,7 +63,7 @@ trait Views
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getLeastViewsByPage(Period $period): array
+    public function leastViewsByPage(Period $period): array
     {
         return $this->getViewsByPage($period, Direction::ASC);
     }

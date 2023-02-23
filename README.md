@@ -95,28 +95,28 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the top users by language for the last 7 weeks, limit to top 10:
-$data = Analytics::getTopUsersByLanguage(period: Period::weeks(7), limit: 10);
+$data = Analytics::topUsersByLanguage(period: Period::weeks(7), limit: 10);
 
 // Get the total users by language for the last 7 weeks:
-$data = Analytics::getTotalUsersByLanguage(Period::weeks(7));
+$data = Analytics::totalUsersByLanguage(Period::weeks(7));
 
 // Get the top users by city for the last 7 weeks, limit to top 5:
-$data = Analytics::getTopUsersByCity(period: Period::weeks(7), limit: 5);
+$data = Analytics::topUsersByCity(period: Period::weeks(7), limit: 5);
 
 // Get the total users by city for the last 7 weeks:
-$data = Analytics::getTotalUsersByCity(Period::weeks(7));
+$data = Analytics::totalUsersByCity(Period::weeks(7));
 
 // Get the top users by country for the last 7 weeks, limit to top 10:
-$data = Analytics::getTopUsersByCountry(period: Period::weeks(7), limit: 10);
+$data = Analytics::topUsersByCountry(period: Period::weeks(7), limit: 10);
 
 // Get the total users by country for the last 7 weeks:
-$data = Analytics::getTotalUsersByCountry(Period::weeks(7));
+$data = Analytics::totalUsersByCountry(Period::weeks(7));
 
 // Get the total users by gender for the last 7 weeks:
-$data = Analytics::getTotalUsersByGender(Period::weeks(7));
+$data = Analytics::totalUsersByGender(Period::weeks(7));
 
 // Get the total users by age group for the last 7 weeks
-$data = Analytics::getTotalUsersByAgeGroup(Period::weeks(7));
+$data = Analytics::totalUsersByAgeGroup(Period::weeks(7));
 ```
 
 ### Device and OS Analytics
@@ -130,49 +130,49 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the top users by device category for the last 1 year:
-$data = Analytics::getTopUsersByDeviceCategory(Period::years(1));
+$data = Analytics::topUsersByDeviceCategory(Period::years(1));
 
 // Get the top users by operating system for the last 1 year:
-$data = Analytics::getTopUsersByOperatingSystem(Period::years(1));
+$data = Analytics::topUsersByOperatingSystem(Period::years(1));
 
 // Get the top users by browser for the last 1 year, limit to top 10:
-$data = Analytics::getTopUsersByBrowser(period: Period::years(1), limit: 10);
+$data = Analytics::topUsersByBrowser(period: Period::years(1), limit: 10);
 
 // Get the total users by browser for the last 1 year:
-$data = Analytics::getTotalUsersByBrowser(Period::years(1));
+$data = Analytics::totalUsersByBrowser(Period::years(1));
 
 // Get the top users by screen resolution for the last 1 year, limit to top 5:
-$data = Analytics::getTopUsersByScreenResolution(period: Period::years(1), limit: 5);
+$data = Analytics::topUsersByScreenResolution(period: Period::years(1), limit: 5);
 
 // Get the total users by operating system for the last 1 year:
-$data = Analytics::getTotalUsersByOperatingSystem(Period::years(1));
+$data = Analytics::totalUsersByOperatingSystem(Period::years(1));
 
 // Get the total users by device category for the last 1 year:
-$data = Analytics::getTotalUsersByDeviceCategory(Period::years(1));
+$data = Analytics::totalUsersByDeviceCategory(Period::years(1));
 
 // Get the top users by mobile device branding for the last 1 year, limit to top 10:
-$data = Analytics::getTopUsersByMobileDeviceBranding(period: Period::years(1), limit: 10);
+$data = Analytics::topUsersByMobileDeviceBranding(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device branding for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceBranding(Period::years(1));
+$data = Analytics::totalUsersByMobileDeviceBranding(Period::years(1));
 
 // Get the top users by mobile device model for the last 1 year, limit to top 10:
-$data = Analytics::getTopUsersByMobileDeviceModel(period: Period::years(1), limit: 10);
+$data = Analytics::topUsersByMobileDeviceModel(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device model for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceModel(Period::years(1));
+$data = Analytics::totalUsersByMobileDeviceModel(Period::years(1));
 
 // Get the top users by mobile input selector for the last 1 year, limit to top 10:
-$data = Analytics::getTopUsersByMobileInputSelector(period: Period::years(1), limit: 10);
+$data = Analytics::topUsersByMobileInputSelector(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile input selector for the last 1 year:
-$data = Analytics::getTotalUsersByMobileInputSelector(Period::years(1));
+$data = Analytics::totalUsersByMobileInputSelector(Period::years(1));
 
 // Get the top users by mobile device info for the last 1 year, limit to top 10:
-$data = Analytics::getTopUsersByMobileDeviceInfo(period: Period::years(1), limit: 10);
+$data = Analytics::topUsersByMobileDeviceInfo(period: Period::years(1), limit: 10);
 
 // Get the total users by mobile device info for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceInfo(Period::years(1));
+$data = Analytics::totalUsersByMobileDeviceInfo(Period::years(1));
 
 // Get the top users by mobile device marketing name for the last 1 year, limit to top 10:
 $data = Analytics::getTopUsersByMobileDeviceMarketingName(period: Period::years(1), limit: 10);
@@ -192,19 +192,19 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the total pageviews for the last 14 days:
-$data = Analytics::getTotalViews(Period::days(14));
+$data = Analytics::totalViews(Period::days(14));
 
 // Get the total pageviews for the last 14 days, grouped by date:
-$data = Analytics::getTotalViewsByDate(Period::days(14));
+$data = Analytics::totalViewsByDate(Period::days(14));
 
 // Get the total pageviews for the last 14 days, grouped by page:
-$data = Analytics::getTotalViewsByPage(Period::days(14));
+$data = Analytics::totalViewsByPage(Period::days(14));
 
 // Get the top viewed pages for the last 14 days:
-$data = Analytics::getTopViewsByPage(Period::days(14));
+$data = Analytics::topViewsByPage(Period::days(14));
 
 // Get the least viewed pages for the last 14 days:
-$data = Analytics::getLeastViewsByPage(Period::days(14));
+$data = Analytics::leastViewsByPage(Period::days(14));
 ```
 
 ### Sessions Analytics
@@ -222,6 +222,27 @@ $data = Analytics::averageSessionDuration(Period::days(7));
 
 // Get the average session duration for the last 7 days, grouped by date:
 $data = Analytics::averageSessionDurationByDate(Period::days(7));
+
+// Get the average page views per session for the last 7 days:
+$data = Analytics::averagePageViewsPerSession(Period::days(7));
+
+// Get the average page views per session for the last 7 days, grouped by date:
+$data = Analytics::averagePageViewsPerSessionByDate(Period::days(7));
+
+// Get the average session duration in seconds for the last 7 days:
+$data = Analytics::averageSessionDurationInSeconds(Period::days(7));
+
+// Get the average session duration in seconds for the last 7 days, grouped by date:
+$data = Analytics::averageSessionDurationInSecondsByDate(Period::days(7));
+
+// Get bounce rate for the last 7 days:
+$data = Analytics::bounceRate(Period::days(7));
+
+// Get bounce rate for the last 7 days, grouped by date:
+$data = Analytics::bounceRateByDate(Period::days(7));
+
+// Get bounce rate by page for the last 7 days:
+$data = Analytics::bounceRateByPage(Period::days(7));
 ```
 
 ### Users Analytics
@@ -235,19 +256,19 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the total users for the last 5 weeks:
-$data = Analytics::getTotalUsers(Period::weeks(5));
+$data = Analytics::totalUsers(Period::weeks(5));
 
 // Get the total users for the last 5 weeks, grouped by date:
-$data = Analytics::getTotalUsersByDate(Period::weeks(5));
+$data = Analytics::totalUsersByDate(Period::weeks(5));
 
 // Get the total users for the last 5 weeks, grouped by session source:
-$data = Analytics::getTotalUsersBySessionSource(Period::weeks(5));
+$data = Analytics::totalUsersBySessionSource(Period::weeks(5));
 
 // Get the total users for the last 5 weeks, grouped by session medium:
-$data = Analytics::getTotalUsersBySessionMedium(Period::weeks(5));
+$data = Analytics::totalUsersBySessionMedium(Period::weeks(5));
 
 // Get the total users for the last 5 weeks, grouped by session device:
-$data = Analytics::getTotalUsersBySessionDevice(Period::weeks(5));
+$data = Analytics::totalUsersBySessionDevice(Period::weeks(5));
 ```
 
 ## Testing
