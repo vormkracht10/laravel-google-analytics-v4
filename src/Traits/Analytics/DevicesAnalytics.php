@@ -13,13 +13,15 @@ trait DevicesAnalytics
      */
     public function topUsersByBrowser(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('browser')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -28,11 +30,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByBrowser(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('browser')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('browser');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -41,13 +45,15 @@ trait DevicesAnalytics
      */
     public function topUsersByOperatingSystem(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('operatingSystem')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -56,11 +62,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByOperatingSystem(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('operatingSystem')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('operatingSystem');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -69,13 +77,15 @@ trait DevicesAnalytics
      */
     public function topUsersByDeviceCategory(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('deviceCategory')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -84,11 +94,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByDeviceCategory(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('deviceCategory')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('deviceCategory');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -97,13 +109,15 @@ trait DevicesAnalytics
      */
     public function topUsersByMobileDeviceBranding(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceBranding')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -112,11 +126,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByMobileDeviceBranding(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('mobileDeviceBranding')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('mobileDeviceBranding');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -125,13 +141,15 @@ trait DevicesAnalytics
      */
     public function topUsersByMobileDeviceModel(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceModel')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -140,11 +158,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByMobileDeviceModel(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('mobileDeviceModel')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('mobileDeviceModel');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -153,13 +173,15 @@ trait DevicesAnalytics
      */
     public function topUsersByMobileInputSelector(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('mobileInputSelector')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -168,11 +190,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByMobileInputSelector(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('mobileInputSelector')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('mobileInputSelector');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -181,13 +205,15 @@ trait DevicesAnalytics
      */
     public function topUsersByMobileDeviceInfo(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceInfo')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -196,11 +222,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByMobileDeviceInfo(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('mobileDeviceInfo')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('mobileDeviceInfo');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -209,13 +237,15 @@ trait DevicesAnalytics
      */
     public function topUsersByMobileDeviceMarketingName(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('mobileDeviceMarketingName')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -224,11 +254,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByMobileDeviceMarketingName(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('mobileDeviceMarketingName')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('mobileDeviceMarketingName');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -237,13 +269,15 @@ trait DevicesAnalytics
      */
     public function topUsersByScreenResolution(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('screenResolution')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -252,11 +286,13 @@ trait DevicesAnalytics
      */
     public function totalUsersByScreenResolution(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('screenResolution')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('screenResolution');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -265,13 +301,15 @@ trait DevicesAnalytics
      */
     public function topUsersByPlatform(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('platform')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
-            ->dataTable;
+            ->limit($limit);
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 
     /**
@@ -280,10 +318,12 @@ trait DevicesAnalytics
      */
     public function totalUsersByPlatform(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('platform')
-            ->getReport()
-            ->dataTable;
+            ->addDimensions('platform');
+
+            return $this->getReport($googleAnalytics)
+                ->dataTable;
     }
 }

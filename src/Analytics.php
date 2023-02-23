@@ -9,10 +9,12 @@ use Vormkracht10\Analytics\Traits\Analytics\ViewsAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\DevicesAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\SessionsAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\DemographicAnalytics;
+use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
 
-class Analytics extends GoogleAnalyticsService
+class Analytics
 {
-    use ViewsAnalytics,
+    use ResponseFormatterTrait,
+        ViewsAnalytics,
         SessionsAnalytics,
         UsersAnalytics,
         DevicesAnalytics,
@@ -22,8 +24,11 @@ class Analytics extends GoogleAnalyticsService
 
     public ?string $credentials = null;
 
+    public GoogleAnalyticsService $googleAnalytics;
+
     public function __construct()
     {
+        $this->googleAnalytics = new GoogleAnalyticsService();
         $this->propertyId = config('google-analytics.property_id') ?? null;
         $this->credentials = config('google-analytics.credentials') ?? null;
     }
@@ -59,22 +64,22 @@ class Analytics extends GoogleAnalyticsService
         ]);
     }
 
-    public function getReport(): AnalyticsResponse
+    public function getReport(GoogleAnalyticsService $googleAnalytics): AnalyticsResponse
     {
         $client = $this->getClient();
 
         $response = $client->runReport([
             'property' => 'properties/'.$this->getPropertyId(),
-            'dateRanges' => $this->dateRanges,
-            'dimensions' => $this->dimensions,
-            'metrics' => $this->metrics,
-            'orderBys' => $this->orderBys,
-            'metricAggregations' => $this->metricAggregations,
-            'dimensionFilter' => $this->dimensionFilter,
-            'metricFilter' => $this->metricFilter,
-            'limit' => $this->limit,
-            'offset' => $this->offset,
-            'keepEmptyRows' => $this->keepEmptyRows,
+            'dateRanges' => $googleAnalytics->dateRanges,
+            'dimensions' => $googleAnalytics->dimensions,
+            'metrics' => $googleAnalytics->metrics,
+            'orderBys' => $googleAnalytics->orderBys,
+            'metricAggregations' => $googleAnalytics->metricAggregations,
+            'dimensionFilter' => $googleAnalytics->dimensionFilter,
+            'metricFilter' => $googleAnalytics->metricFilter,
+            'limit' => $googleAnalytics->limit,
+            'offset' => $googleAnalytics->offset,
+            'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
         ]);
 
         return $this->formatResponse($response);

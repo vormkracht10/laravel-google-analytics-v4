@@ -14,9 +14,10 @@ trait ViewsAnalytics
      */
     public function totalViews(Period $period): int
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('screenPageViews')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
+            ->addMetrics('screenPageViews');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (int) Arr::first(Arr::flatten($result));
@@ -28,12 +29,13 @@ trait ViewsAnalytics
      */
     public function totalViewsByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('date')
             ->orderByDimension('date')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -43,10 +45,11 @@ trait ViewsAnalytics
      */
     public function totalViewsByPage(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('pageTitle', 'fullPageUrl')
-            ->getReport()
+            ->addDimensions('pageTitle', 'fullPageUrl');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -70,11 +73,12 @@ trait ViewsAnalytics
 
     private function getViewsByPage(Period $period, Direction $direction): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('pageTitle', 'fullPageUrl')
-            ->orderByMetric('screenPageViews', $direction)
-            ->getReport()
+            ->orderByMetric('screenPageViews', $direction);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -84,10 +88,11 @@ trait ViewsAnalytics
      */
     public function totalViewsByPagePath(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('pagePath')
-            ->getReport()
+            ->addDimensions('pagePath');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -97,12 +102,13 @@ trait ViewsAnalytics
      */
     public function topViewsByPagePath(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('pagePath')
             ->orderByMetric('screenPageViews', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -112,10 +118,11 @@ trait ViewsAnalytics
      */
     public function totalViewsByPageTitle(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('pageTitle')
-            ->getReport()
+            ->addDimensions('pageTitle');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -125,12 +132,13 @@ trait ViewsAnalytics
      */
     public function topViewsByPageTitle(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('pageTitle')
             ->orderByMetric('screenPageViews', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -140,10 +148,11 @@ trait ViewsAnalytics
      */
     public function totalViewsByPageUrl(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('fullPageUrl')
-            ->getReport()
+            ->addDimensions('fullPageUrl');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -153,12 +162,13 @@ trait ViewsAnalytics
      */
     public function topViewsByPageUrl(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('fullPageUrl')
             ->orderByMetric('screenPageViews', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -168,10 +178,11 @@ trait ViewsAnalytics
      */
     public function totalViewsByCountry(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('country')
-            ->getReport()
+            ->addDimensions('country');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -181,12 +192,13 @@ trait ViewsAnalytics
      */
     public function topViewsByCountry(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('country')
             ->orderByMetric('screenPageViews', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -196,11 +208,13 @@ trait ViewsAnalytics
      */
     public function totalViewsByCity(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('city')
-            ->getReport()
+            ->addDimensions('city');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
+
     }
 
     /**
@@ -209,12 +223,13 @@ trait ViewsAnalytics
      */
     public function topViewsByCity(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
             ->addDimensions('city')
             ->orderByMetric('screenPageViews', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 }

@@ -13,9 +13,11 @@ trait UsersAnalytics
      */
     public function totalUsers(Period $period): int
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('totalUsers')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('totalUsers');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (int) Arr::first(Arr::flatten($result));
@@ -27,10 +29,12 @@ trait UsersAnalytics
      */
     public function totalUsersByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('date')
-            ->getReport()
+            ->addDimensions('date');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -40,10 +44,12 @@ trait UsersAnalytics
      */
     public function totalUsersBySessionSource(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('sessionSource')
-            ->getReport()
+            ->addDimensions('sessionSource');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -53,10 +59,12 @@ trait UsersAnalytics
      */
     public function totalUsersBySessionMedium(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('sessionMedium')
-            ->getReport()
+            ->addDimensions('sessionMedium');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -66,10 +74,12 @@ trait UsersAnalytics
      */
     public function totalUsersBySessionDevice(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('sessionDevice')
-            ->getReport()
+            ->addDimensions('sessionDevice');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 }

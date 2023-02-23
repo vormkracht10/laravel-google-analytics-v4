@@ -13,9 +13,11 @@ trait SessionsAnalytics
      */
     public function averageSessionDuration(Period $period): float
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('averageSessionDuration')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('averageSessionDuration');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (float) Arr::first(Arr::flatten($result));
@@ -27,12 +29,14 @@ trait SessionsAnalytics
      */
     public function averageSessionDurationByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('averageSessionDuration')
             ->addDimensions('date')
             ->orderByDimension('date')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -42,10 +46,12 @@ trait SessionsAnalytics
      */
     public function averageSessionDurationInSecondsByPage(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('averageSessionDuration')
-            ->addDimensions('pagePath')
-            ->getReport()
+            ->addDimensions('pagePath');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -55,9 +61,11 @@ trait SessionsAnalytics
      */
     public function averagePageViewsPerSession(Period $period): float
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('screenPageViewsPerSession')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('screenPageViewsPerSession');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (float) Arr::first(Arr::flatten($result));
@@ -69,12 +77,14 @@ trait SessionsAnalytics
      */
     public function averagePageViewsPerSessionByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('screenPageViewsPerSession')
             ->addDimensions('date')
             ->orderByDimension('date')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -84,9 +94,11 @@ trait SessionsAnalytics
      */
     public function averageSessionDurationInSeconds(Period $period): float
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('averageSessionDuration')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('averageSessionDuration');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (float) Arr::first(Arr::flatten($result));
@@ -98,12 +110,14 @@ trait SessionsAnalytics
      */
     public function averageSessionDurationInSecondsByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('averageSessionDuration')
             ->addDimensions('date')
             ->orderByDimension('date')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -113,9 +127,11 @@ trait SessionsAnalytics
      */
     public function bounceRate(Period $period): float
     {
-        $result = $this->setDateRange($period)
-            ->addMetrics('bounceRate')
-            ->getReport()
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('bounceRate');
+
+        $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (float) Arr::first(Arr::flatten($result));
@@ -127,12 +143,14 @@ trait SessionsAnalytics
      */
     public function bounceRateByDate(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('bounceRate')
             ->addDimensions('date')
             ->orderByDimension('date')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -142,12 +160,14 @@ trait SessionsAnalytics
      */
     public function bounceRateByPage(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('bounceRate')
             ->addDimensions('pagePath')
             ->orderByDimension('bounceRate')
-            ->keepEmptyRows(true)
-            ->getReport()
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 }

@@ -13,12 +13,14 @@ trait DemographicAnalytics
      */
     public function topUsersByLanguage(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('language')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -28,10 +30,12 @@ trait DemographicAnalytics
      */
     public function totalUsersByLanguage(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('language')
-            ->getReport()
+            ->addDimensions('language');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -41,12 +45,14 @@ trait DemographicAnalytics
      */
     public function topUsersByCountry(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('country')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -56,10 +62,12 @@ trait DemographicAnalytics
      */
     public function totalUsersByCountry(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('country')
-            ->getReport()
+            ->addDimensions('country');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -69,12 +77,14 @@ trait DemographicAnalytics
      */
     public function topUsersByCity(Period $period, int $limit = 10): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('city')
             ->orderByMetric('totalUsers', Direction::DESC)
-            ->limit($limit)
-            ->getReport()
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -84,10 +94,12 @@ trait DemographicAnalytics
      */
     public function totalUsersByCity(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
-            ->addDimensions('city')
-            ->getReport()
+            ->addDimensions('city');
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -97,11 +109,13 @@ trait DemographicAnalytics
      */
     public function totalUsersByGender(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('userGender')
-            ->orderByMetric('totalUsers', Direction::DESC)
-            ->getReport()
+            ->orderByMetric('totalUsers', Direction::DESC);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 
@@ -111,11 +125,13 @@ trait DemographicAnalytics
      */
     public function totalUsersByAge(Period $period): array
     {
-        return $this->setDateRange($period)
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
             ->addMetrics('totalUsers')
             ->addDimensions('userAgeBracket')
-            ->orderByMetric('totalUsers', Direction::DESC)
-            ->getReport()
+            ->orderByMetric('totalUsers', Direction::DESC);
+
+        return $this->getReport($googleAnalytics)
             ->dataTable;
     }
 }
