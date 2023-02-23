@@ -218,10 +218,31 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the average session duration for the last 7 days:
-$data = Analytics::averageSessionDuration(Period::days(7));
+$data = Analytics::getAverageSessionDuration(Period::days(7));
 
 // Get the average session duration for the last 7 days, grouped by date:
-$data = Analytics::averageSessionDurationByDate(Period::days(7));
+$data = Analytics::getAverageSessionDurationByDate(Period::days(7));
+
+// Get the average page views per session for the last 7 days:
+$data = Analytics::getAveragePageViewsPerSession(Period::days(7));
+
+// Get the average page views per session for the last 7 days, grouped by date:
+$data = Analytics::getAveragePageViewsPerSessionByDate(Period::days(7));
+
+// Get the average session duration in seconds for the last 7 days:
+$data = Analytics::getAverageSessionDurationInSeconds(Period::days(7));
+
+// Get the average session duration in seconds for the last 7 days, grouped by date:
+$data = Analytics::getAverageSessionDurationInSecondsByDate(Period::days(7));
+
+// Get bounce rate for the last 7 days:
+$data = Analytics::getBounceRate(Period::days(7));
+
+// Get bounce rate for the last 7 days, grouped by date:
+$data = Analytics::getBounceRateByDate(Period::days(7));
+
+// Get bounce rate by page for the last 7 days:
+$data = Analytics::getBounceRateByPage(Period::days(7));
 ```
 
 ### Users Analytics
