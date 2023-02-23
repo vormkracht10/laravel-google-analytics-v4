@@ -77,7 +77,7 @@ trait Views
             ->getReport()
             ->dataTable;
     }
-    
+
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
