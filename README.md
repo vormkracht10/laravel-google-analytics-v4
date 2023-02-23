@@ -205,6 +205,36 @@ $data = Analytics::topViewsByPage(Period::days(14));
 
 // Get the least viewed pages for the last 14 days:
 $data = Analytics::leastViewsByPage(Period::days(14));
+
+// Get the total views for the last 14 days, grouped by page path:
+$data = Analytics::totalViewsByPagePath(Period::days(14));
+
+// Get the top viewed pages for the last 14 days, grouped by page path:
+$data = Analytics::topViewsByPagePath(Period::days(14));
+
+// Get the total views for the last 14 days, grouped by page title:
+$data = Analytics::totalViewsByPageTitle(Period::days(14));
+
+// Get the top viewed pages for the last 14 days, grouped by page title:
+$data = Analytics::topViewsByPageTitle(Period::days(14));
+
+// Get the total views for the last 14 days, grouped by page url:
+$data = Analytics::totalViewsByPageUrl(Period::days(14));
+
+// Get the top viewed pages for the last 14 days, grouped by page url:
+$data = Analytics::topViewsByPageUrl(Period::days(14));
+
+// Get the total views for the last 14 days, grouped by country:
+$data = Analytics::totalViewsByCountry(Period::days(14));
+
+// Get the top viewed pages for the last 14 days, grouped by country:
+$data = Analytics::topViewsByCountry(Period::days(14));
+
+// Get the total views for the last 14 days, grouped by city:
+$data = Analytics::totalViewsByCity(Period::days(14));
+
+// Get the top viewed pages for the last 14 days, grouped by city:
+$data = Analytics::topViewsByCity(Period::days(14));
 ```
 
 ### Sessions Analytics
