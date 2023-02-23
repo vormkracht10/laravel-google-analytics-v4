@@ -2,20 +2,20 @@
 
 namespace Vormkracht10\Analytics;
 
-use Vormkracht10\Analytics\Traits\MetricTrait;
-use Vormkracht10\Analytics\Traits\OrderByTrait;
-use Vormkracht10\Analytics\Traits\FilterByTrait;
+use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
-use Vormkracht10\Analytics\Traits\Entities\Users;
-use Vormkracht10\Analytics\Traits\Entities\Views;
-use Vormkracht10\Analytics\Traits\RowConfigTrait;
+use Vormkracht10\Analytics\Traits\Entities\Demographic;
 use Vormkracht10\Analytics\Traits\Entities\Devices;
 use Vormkracht10\Analytics\Traits\Entities\Sessions;
-use Vormkracht10\Analytics\Traits\Entities\Demographic;
-use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Vormkracht10\Analytics\Traits\Entities\Users;
+use Vormkracht10\Analytics\Traits\Entities\Views;
+use Vormkracht10\Analytics\Traits\FilterByTrait;
 use Vormkracht10\Analytics\Traits\MetricAggregationTrait;
+use Vormkracht10\Analytics\Traits\MetricTrait;
+use Vormkracht10\Analytics\Traits\OrderByTrait;
 use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
+use Vormkracht10\Analytics\Traits\RowConfigTrait;
 
 class Analytics
 {
