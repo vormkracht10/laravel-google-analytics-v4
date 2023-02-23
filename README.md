@@ -223,6 +223,9 @@ $data = Analytics::averageSessionDuration(Period::days(7));
 // Get the average session duration for the last 7 days, grouped by date:
 $data = Analytics::averageSessionDurationByDate(Period::days(7));
 
+// Get the average session duration in seconds for the last 7 days, grouped by page:
+$data = Analytics::averageSessionDurationInSecondsByPage(Period::days(7));
+
 // Get the average page views per session for the last 7 days:
 $data = Analytics::averagePageViewsPerSession(Period::days(7));
 

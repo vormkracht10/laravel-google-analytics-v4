@@ -40,6 +40,19 @@ trait Sessions
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
+    public function averageSessionDurationInSecondsByPage(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('averageSessionDuration')
+            ->addDimensions('pagePath')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function averagePageViewsPerSession(Period $period): float
     {
         $result = $this->setDateRange($period)
