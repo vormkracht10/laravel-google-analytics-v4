@@ -186,4 +186,26 @@ trait Devices
             ->getReport()
             ->dataTable;
     }
+
+    public function getMostUsersByPlatform(Period $period, int $limit): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('totalUsers')
+            ->addDimensions('platform')
+            ->orderByMetric('totalUsers', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
+
+    public function getTotalUsersByPlatform(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('totalUsers')
+            ->addDimensions('platform')
+            ->getReport()
+            ->dataTable;
+    }
+
+    
 }
