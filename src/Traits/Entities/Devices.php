@@ -7,6 +7,10 @@ use Vormkracht10\Analytics\Period;
 
 trait Devices
 {
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByBrowser(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -18,6 +22,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByBrowser(Period $period): array
     {
         return $this->setDateRange($period)
@@ -27,6 +35,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByOperatingSystem(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -38,6 +50,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByOperatingSystem(Period $period): array
     {
         return $this->setDateRange($period)
@@ -47,6 +63,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByDeviceCategory(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -58,6 +78,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByDeviceCategory(Period $period): array
     {
         return $this->setDateRange($period)
@@ -67,6 +91,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByMobileDeviceBranding(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -78,6 +106,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByMobileDeviceBranding(Period $period): array
     {
         return $this->setDateRange($period)
@@ -87,6 +119,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByMobileDeviceModel(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -98,6 +134,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByMobileDeviceModel(Period $period): array
     {
         return $this->setDateRange($period)
@@ -107,6 +147,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByMobileInputSelector(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -118,6 +162,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByMobileInputSelector(Period $period): array
     {
         return $this->setDateRange($period)
@@ -127,6 +175,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByMobileDeviceInfo(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -138,6 +190,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByMobileDeviceInfo(Period $period): array
     {
         return $this->setDateRange($period)
@@ -147,6 +203,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByMobileDeviceMarketingName(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -158,6 +218,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByMobileDeviceMarketingName(Period $period): array
     {
         return $this->setDateRange($period)
@@ -167,6 +231,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByScreenResolution(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -178,6 +246,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByScreenResolution(Period $period): array
     {
         return $this->setDateRange($period)
@@ -187,6 +259,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getMostUsersByPlatform(Period $period, int $limit): array
     {
         return $this->setDateRange($period)
@@ -198,6 +274,10 @@ trait Devices
             ->dataTable;
     }
 
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
     public function getTotalUsersByPlatform(Period $period): array
     {
         return $this->setDateRange($period)
