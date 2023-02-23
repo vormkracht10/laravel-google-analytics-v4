@@ -3,6 +3,7 @@
 namespace Vormkracht10\Analytics;
 
 use Illuminate\Support\Carbon;
+use Vormkracht10\Analytics\Exceptions\InvalidPeriod;
 
 class Period
 {
@@ -13,7 +14,7 @@ class Period
     final public function __construct(Carbon $startDate, Carbon $endDate)
     {
         if ($startDate->greaterThan($endDate)) {
-            throw new \Exception('Start date cannot be greater than end date');
+            throw InvalidPeriod::startDateCannotBeGreaterThanEndDate($startDate, $endDate);
         }
 
         $this->startDate = $startDate;
