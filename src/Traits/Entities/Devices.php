@@ -17,7 +17,7 @@ trait Devices
             ->getReport()
             ->dataTable;
     }
-    
+
     public function getTotalUsersByBrowser(Period $period): array
     {
         return $this->setDateRange($period)
@@ -206,6 +206,4 @@ trait Devices
             ->getReport()
             ->dataTable;
     }
-
-    
 }
