@@ -226,7 +226,7 @@ $data = Analytics::averageSessionDurationByDate(Period::days(7));
 
 ### Users Analytics
 
-Methods to retrieve user analytics data for your website or application. You can use these methods to get information such as the total visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
+Methods to retrieve user analytics data for your website or application. You can use these methods to get information such as the total visitors or amount of visitors per device. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
 
 Here are some examples of how to use the methods:
 
@@ -236,6 +236,18 @@ use Analytics\Analytics;
 
 // Get the total users for the last 5 weeks:
 $data = Analytics::getTotalUsers(Period::weeks(5));
+
+// Get the total users for the last 5 weeks, grouped by date:
+$data = Analytics::getTotalUsersByDate(Period::weeks(5));
+
+// Get the total users for the last 5 weeks, grouped by session source:
+$data = Analytics::getTotalUsersBySessionSource(Period::weeks(5));
+
+// Get the total users for the last 5 weeks, grouped by session medium:
+$data = Analytics::getTotalUsersBySessionMedium(Period::weeks(5));
+
+// Get the total users for the last 5 weeks, grouped by session device:
+$data = Analytics::getTotalUsersBySessionDevice(Period::weeks(5));
 ```
 
 ## Testing
