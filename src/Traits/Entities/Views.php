@@ -77,4 +77,144 @@ trait Views
             ->getReport()
             ->dataTable;
     }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function totalViewsByPagePath(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pagePath')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function topViewsByPagePath(Period $period, int $limit = 10): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pagePath')
+            ->orderByMetric('screenPageViews', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function totalViewsByPageTitle(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pageTitle')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function topViewsByPageTitle(Period $period, int $limit = 10): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('pageTitle')
+            ->orderByMetric('screenPageViews', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function totalViewsByPageUrl(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('fullPageUrl')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function topViewsByPageUrl(Period $period, int $limit = 10): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('fullPageUrl')
+            ->orderByMetric('screenPageViews', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function totalViewsByCountry(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('country')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function topViewsByCountry(Period $period, int $limit = 10): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('country')
+            ->orderByMetric('screenPageViews', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function totalViewsByCity(Period $period): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('city')
+            ->getReport()
+            ->dataTable;
+    }
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function topViewsByCity(Period $period, int $limit = 10): array
+    {
+        return $this->setDateRange($period)
+            ->addMetrics('screenPageViews')
+            ->addDimensions('city')
+            ->orderByMetric('screenPageViews', Direction::DESC)
+            ->limit($limit)
+            ->getReport()
+            ->dataTable;
+    }
 }
