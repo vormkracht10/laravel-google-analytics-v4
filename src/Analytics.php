@@ -5,6 +5,7 @@ namespace Vormkracht10\Analytics;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Traits\DateRangeTrait;
 use Vormkracht10\Analytics\Traits\DimensionTrait;
+use Vormkracht10\Analytics\Traits\Entities\Demographic;
 use Vormkracht10\Analytics\Traits\Entities\Devices;
 use Vormkracht10\Analytics\Traits\Entities\Sessions;
 use Vormkracht10\Analytics\Traits\Entities\Users;
@@ -29,7 +30,8 @@ class Analytics
         Views,
         Sessions,
         Users,
-        Devices;
+        Devices,
+        Demographic;
 
     public ?int $propertyId = null;
 

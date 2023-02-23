@@ -84,6 +84,103 @@ Period::years(4);
 
 ## Available methods
 
+## Demographic Analytics
+
+Methods to retrieve demographic analytics data for your website or application. You can use these methods to get information such as the most used languages, total users by city or country and total users per gender. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
+
+Here are some examples of how to use the methods:
+
+```php
+use Analytics\Period;
+use Analytics\Analytics;
+
+// Get the most users by language for the last 7 weeks, limit to top 10:
+$data = Analytics::getMostUsersByLanguage(period: Period::weeks(7), limit: 10);
+
+// Get the total users by language for the last 7 weeks:
+$data = Analytics::getTotalUsersByLanguage(Period::weeks(7));
+
+// Get the most users by city for the last 7 weeks, limit to top 5:
+$data = Analytics::getMostUsersByCity(period: Period::weeks(7), limit: 5);
+
+// Get the total users by city for the last 7 weeks:
+$data = Analytics::getTotalUsersByCity(Period::weeks(7));
+
+// Get the most users by country for the last 7 weeks, limit to top 10:
+$data = Analytics::getMostUsersByCountry(period: Period::weeks(7), limit: 10);
+
+// Get the total users by country for the last 7 weeks:
+$data = Analytics::getTotalUsersByCountry(Period::weeks(7));
+
+// Get the total users by gender for the last 7 weeks:
+$data = Analytics::getTotalUsersByGender(Period::weeks(7));
+
+// Get the total users by age group for the last 7 weeks
+$data = Analytics::getTotalUsersByAgeGroup(Period::weeks(7));
+```
+
+### Device and OS Analytics
+
+Methods to retrieve device and operating system analytics data for your website or application. You can use these methods to get information such as the most popular browsers, screen resolutions, and mobile devices used by your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
+
+Here are some examples of how to use the methods:
+
+```php
+use Analytics\Period;
+use Analytics\Analytics;
+
+// Get the most users by device category for the last 1 year:
+$data = Analytics::getMostUsersByDeviceCategory(Period::years(1));
+
+// Get the most users by operating system for the last 1 year:
+$data = Analytics::getMostUsersByOperatingSystem(Period::years(1));
+
+// Get the most users by browser for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByBrowser(period: Period::years(1), limit: 10);
+
+// Get the total users by browser for the last 1 year:
+$data = Analytics::getTotalUsersByBrowser(Period::years(1));
+
+// Get the most users by screen resolution for the last 1 year, limit to top 5:
+$data = Analytics::getMostUsersByScreenResolution(period: Period::years(1), limit: 5);
+
+// Get the total users by operating system for the last 1 year:
+$data = Analytics::getTotalUsersByOperatingSystem(Period::years(1));
+
+// Get the total users by device category for the last 1 year:
+$data = Analytics::getTotalUsersByDeviceCategory(Period::years(1));
+
+// Get the most users by mobile device branding for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByMobileDeviceBranding(period: Period::years(1), limit: 10);
+
+// Get the total users by mobile device branding for the last 1 year:
+$data = Analytics::getTotalUsersByMobileDeviceBranding(Period::years(1));
+
+// Get the most users by mobile device model for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByMobileDeviceModel(period: Period::years(1), limit: 10);
+
+// Get the total users by mobile device model for the last 1 year:
+$data = Analytics::getTotalUsersByMobileDeviceModel(Period::years(1));
+
+// Get the most users by mobile input selector for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByMobileInputSelector(period: Period::years(1), limit: 10);
+
+// Get the total users by mobile input selector for the last 1 year:
+$data = Analytics::getTotalUsersByMobileInputSelector(Period::years(1));
+
+// Get the most users by mobile device info for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByMobileDeviceInfo(period: Period::years(1), limit: 10);
+
+// Get the total users by mobile device info for the last 1 year:
+$data = Analytics::getTotalUsersByMobileDeviceInfo(Period::years(1));
+
+// Get the most users by mobile device marketing name for the last 1 year, limit to top 10:
+$data = Analytics::getMostUsersByMobileDeviceMarketingName(period: Period::years(1), limit: 10);
+
+// Get the total users by mobile device marketing name for the last 1 year:
+$data = Analytics::getTotalUsersByMobileDeviceMarketingName(Period::years(1));
+```
+
 ### Pageviews Analytics
 
 Methods to retrieve pageview analytics data for your website or application. You can use these methods to get information such as the total views or by page from your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
@@ -139,68 +236,6 @@ use Analytics\Analytics;
 
 // Get the total users for the last 5 weeks:
 $data = Analytics::getTotalUsers(Period::weeks(5));
-```
-
-### Device and OS Analytics
-
-Methods to retrieve device and operating system analytics data for your website or application. You can use these methods to get information such as the most popular browsers, screen resolutions, and mobile devices used by your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
-
-Here are some examples of how to use the methods:
-
-```php
-use Analytics\Period;
-use Analytics\Analytics;
-
-// Get the most users by device category for the last 1 year:
-$data = Analytics::getMostUsersByDeviceCategory(Period::years(1));
-
-// Get the most users by operating system for the last 1 year:
-$data = Analytics::getMostUsersByOperatingSystem(Period::years(1));
-
-// Get the most users by browser for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByBrowser(Period::years(1), 10);
-
-// Get the total users by browser for the last 1 year:
-$data = Analytics::getTotalUsersByBrowser(Period::years(1));
-
-// Get the most users by screen resolution for the last 1 year, limit to top 5:
-$data = Analytics::getMostUsersByScreenResolution(Period::years(1), 5);
-
-// Get the total users by operating system for the last 1 year:
-$data = Analytics::getTotalUsersByOperatingSystem(Period::years(1));
-
-// Get the total users by device category for the last 1 year:
-$data = Analytics::getTotalUsersByDeviceCategory(Period::years(1));
-
-// Get the most users by mobile device branding for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceBranding(Period::years(1), 10);
-
-// Get the total users by mobile device branding for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceBranding(Period::years(1));
-
-// Get the most users by mobile device model for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceModel(Period::years(1), 10);
-
-// Get the total users by mobile device model for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceModel(Period::years(1));
-
-// Get the most users by mobile input selector for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileInputSelector(Period::years(1), 10);
-
-// Get the total users by mobile input selector for the last 1 year:
-$data = Analytics::getTotalUsersByMobileInputSelector(Period::years(1));
-
-// Get the most users by mobile device info for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceInfo(Period::years(1), 10);
-
-// Get the total users by mobile device info for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceInfo(Period::years(1));
-
-// Get the most users by mobile device marketing name for the last 1 year, limit to top 10:
-$data = Analytics::getMostUsersByMobileDeviceMarketingName(Period::years(1), 10);
-
-// Get the total users by mobile device marketing name for the last 1 year:
-$data = Analytics::getTotalUsersByMobileDeviceMarketingName(Period::years(1));
 ```
 
 ## Testing
