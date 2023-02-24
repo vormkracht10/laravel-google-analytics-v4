@@ -33,7 +33,6 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-
     //  public function getLandingPages($days = 30, $maxResults = 10)
     // {
     //     $data = [];
