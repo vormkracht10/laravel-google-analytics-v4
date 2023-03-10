@@ -237,6 +237,26 @@ $data = Analytics::totalViewsByCity(Period::days(14));
 $data = Analytics::topViewsByCity(Period::days(14));
 ```
 
+### Resource Analytics
+
+Methods to retrieve resource analytics data for your website or application. You can use these methods to get information such as the top landing pages, exit pages and referrers but also your most important social media
+
+Here are some examples of how to use the methods:
+
+```php
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
+
+// Get the top 10 referrals for the last 14 days:
+$data = Analytics::getTopReferrers(period: Period::days(14), limit: 10);
+
+// Get the top 20 landing pages for the last 14 days:
+$data = Analytics::getTopLandingPages(period: Period::days(14), limit: 20);
+
+// Get the top 5 traffic sources for the last 14 days:
+$data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
+```
+
 ### Sessions Analytics
 
 Methods to retrieve session duration analytics data for your website or application. You can use these methods to get information such as the average session time from your visitors. All of the methods take a Period object as a parameter to specify the time range for the analytics data.
