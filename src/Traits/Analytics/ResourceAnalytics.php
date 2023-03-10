@@ -28,7 +28,7 @@ trait ResourceAnalytics
             ->addDimensions('landingPage')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
-            
+
         return $this->getReport($googleAnalytics)
             ->dataTable;
     }
