@@ -1,12 +1,12 @@
 {
-    "name": "vormkracht10/laravel-google-analytics",
+    "name": "vormkracht10/laravel-google-analytics-v4",
     "description": "Laravel package to get insights in Google Analytics v4 data",
     "keywords": [
         "vormkracht10",
         "laravel",
-        "laravel-google-analytics"
+        "laravel-google-analytics-v4"
     ],
-    "homepage": "https://github.com/vormkracht10/laravel-google-analytics",
+    "homepage": "https://github.com/vormkracht10/laravel-google-analytics-v4",
     "license": "MIT",
     "authors": [
         {
