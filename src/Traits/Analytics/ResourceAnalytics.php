@@ -45,4 +45,17 @@ trait ResourceAnalytics
         return $this->getReport($googleAnalytics)
             ->dataTable;
     }
+
+    public function getTopBacklinks(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('sessionSourceMedium')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
 }

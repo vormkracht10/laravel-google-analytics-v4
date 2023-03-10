@@ -255,6 +255,9 @@ $data = Analytics::getTopLandingPages(period: Period::days(14), limit: 20);
 
 // Get the top 5 traffic sources for the last 14 days:
 $data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
+
+// Get the top 10 backlinks for the last 14 days:
+$data = Analytics::getTopBacklinks(period: Period::days(14), limit: 10);
 ```
 
 ### Sessions Analytics
