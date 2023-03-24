@@ -252,6 +252,20 @@ $data = Analytics::totalViewsByCity(Period::days(14));
 $data = Analytics::topViewsByCity(Period::days(14));
 ```
 
+### Realtime Analytics
+
+Methods to retrieve realtime analytics data for your website or application. You can use these methods to get information such as the current active visitors on your website. All of the methods take a Period object as a parameter to specify the time range for the analytics data. The default time range is set to 30 minutes when no Period object is passed.
+
+Here are some examples of how to use the methods:
+
+````php
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
+
+// Get the total active users for the last 30 minutes:
+$data = Analytics::totalActiveUsers();
+```
+
 ### Resource Analytics
 
 Methods to retrieve resource analytics data for your website or application. You can use these methods to get information such as the top landing pages, exit pages and referrers but also your most important social media
@@ -273,7 +287,7 @@ $data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
 
 // Get the top 10 backlinks for the last 14 days:
 $data = Analytics::getTopBacklinks(period: Period::days(14), limit: 10);
-```
+````
 
 ### Sessions Analytics
 
