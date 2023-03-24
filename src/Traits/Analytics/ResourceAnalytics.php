@@ -28,7 +28,7 @@ trait ResourceAnalytics
             ->addDimensions('landingPage')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
-            
+
         return $this->getReport($googleAnalytics)
             ->dataTable;
     }
@@ -38,7 +38,7 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
-            ->addDimensions('defaultChannelGroup') //exitPagePath
+            ->addDimensions('defaultChannelGroup')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
