@@ -6,6 +6,8 @@ use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Vormkracht10\Analytics\Service\GoogleAnalyticsService;
 use Vormkracht10\Analytics\Traits\Analytics\DemographicAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\DevicesAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\RealtimeAnalytics;
+use Vormkracht10\Analytics\Traits\Analytics\ResourceAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\SessionsAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\UsersAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\ViewsAnalytics;
@@ -18,7 +20,9 @@ class Analytics
         SessionsAnalytics,
         UsersAnalytics,
         DevicesAnalytics,
-        DemographicAnalytics;
+        DemographicAnalytics,
+        ResourceAnalytics,
+        RealtimeAnalytics;
 
     public ?int $propertyId = null;
 

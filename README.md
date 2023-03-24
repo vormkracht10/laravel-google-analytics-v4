@@ -69,17 +69,32 @@ $averageSessionDuration = Analytics::averageSessionDuration(Period::days(7));
 ### Available periods
 
 ```php
+// Set the period to the last x minutes:
+Period::minutes(30);
+
+// Set the period to the last x hours:
+Period::hours(1);
+
 // Set the period to the last x days:
-Period::days(1);
+Period::days(2);
 
 // Set the period to the last x weeks:
-Period::weeks(2);
+Period::weeks(3);
 
 // Set the period to the last x months:
-Period::months(3);
+Period::months(4);
 
 // Set the period to the last x years:
-Period::years(4);
+Period::years(5);
+
+// Set the period to a custom date range using a Carbon object:
+$startDate = Carbon::now()->subDays(7);
+$endDate = Carbon::now();
+
+Period::create($startDate, $endDate);
+
+// Set the period to since the given date:
+Period::since(Carbon::now()->subDays(7));
 ```
 
 ## Available methods
@@ -236,6 +251,43 @@ $data = Analytics::totalViewsByCity(Period::days(14));
 // Get the top viewed pages for the last 14 days, grouped by city:
 $data = Analytics::topViewsByCity(Period::days(14));
 ```
+
+### Realtime Analytics
+
+Methods to retrieve realtime analytics data for your website or application. You can use these methods to get information such as the current active visitors on your website. All of the methods take a Period object as a parameter to specify the time range for the analytics data. The default time range is set to 30 minutes when no Period object is passed.
+
+Here are some examples of how to use the methods:
+
+````php
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
+
+// Get the total active users for the last 30 minutes:
+$data = Analytics::totalActiveUsers();
+```
+
+### Resource Analytics
+
+Methods to retrieve resource analytics data for your website or application. You can use these methods to get information such as the top landing pages, exit pages and referrers but also your most important social media
+
+Here are some examples of how to use the methods:
+
+```php
+use Vormkracht10\Analytics\Facades\Analytics;
+use Vormkracht10\Analytics\Period;
+
+// Get the top 10 referrals for the last 14 days:
+$data = Analytics::getTopReferrers(period: Period::days(14), limit: 10);
+
+// Get the top 20 landing pages for the last 14 days:
+$data = Analytics::getTopLandingPages(period: Period::days(14), limit: 20);
+
+// Get the top 5 traffic sources for the last 14 days:
+$data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
+
+// Get the top 10 backlinks for the last 14 days:
+$data = Analytics::getTopBacklinks(period: Period::days(14), limit: 10);
+````
 
 ### Sessions Analytics
 
