@@ -57,4 +57,30 @@ class Period
 
         return new self($startDate, $endDate);
     }
+
+    public static function custom(Carbon $startDate, Carbon $endDate): self
+    {
+        return new self($startDate, $endDate);
+    }
+
+    public static function since(Carbon $startDate): self
+    {
+        return new self($startDate, Carbon::today());
+    }
+
+    public static function hours(int $hours): self
+    {
+        $endDate = Carbon::now();
+        $startDate = Carbon::now()->subHours($hours);
+
+        return new self($startDate, $endDate);
+    }
+
+    public static function minutes(int $minutes): self
+    {
+        $endDate = Carbon::now();
+        $startDate = Carbon::now()->subMinutes($minutes);
+
+        return new self($startDate, $endDate);
+    }
 }

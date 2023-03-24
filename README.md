@@ -69,17 +69,32 @@ $averageSessionDuration = Analytics::averageSessionDuration(Period::days(7));
 ### Available periods
 
 ```php
+// Set the period to the last x minutes:
+Period::minutes(30);
+
+// Set the period to the last x hours:
+Period::hours(1);
+
 // Set the period to the last x days:
-Period::days(1);
+Period::days(2);
 
 // Set the period to the last x weeks:
-Period::weeks(2);
+Period::weeks(3);
 
 // Set the period to the last x months:
-Period::months(3);
+Period::months(4);
 
 // Set the period to the last x years:
-Period::years(4);
+Period::years(5);
+
+// Set the period to a custom date range using a Carbon object:
+$startDate = Carbon::now()->subDays(7);
+$endDate = Carbon::now();
+
+Period::create($startDate, $endDate);
+
+// Set the period to since the given date:
+Period::since(Carbon::now()->subDays(7));
 ```
 
 ## Available methods
