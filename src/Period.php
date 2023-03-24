@@ -58,11 +58,6 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function custom(Carbon $startDate, Carbon $endDate): self
-    {
-        return new self($startDate, $endDate);
-    }
-
     public static function since(Carbon $startDate): self
     {
         return new self($startDate, Carbon::today());
