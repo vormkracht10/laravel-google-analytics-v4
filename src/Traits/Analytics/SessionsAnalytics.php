@@ -7,7 +7,6 @@ use Vormkracht10\Analytics\Period;
 
 trait SessionsAnalytics
 {
-
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
