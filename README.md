@@ -20,7 +20,7 @@ composer require vormkracht10/laravel-google-analytics
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-google-analytics-config"
+php artisan vendor:publish --tag="google-analytics-config"
 ```
 
 This is the contents of the published config file:
