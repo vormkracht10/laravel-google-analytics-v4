@@ -60,12 +60,13 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDurationInSecondsByPage(Period $period): array
+    public function averageSessionDurationInSecondsByPage(Period $period, int $limit): array
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('averageSessionDuration')
-            ->addDimensions('pagePath');
+            ->addDimensions('pagePath')
+            ->limit($limit);
 
         return $this->getReport($googleAnalytics)
             ->dataTable;
