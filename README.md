@@ -299,6 +299,9 @@ Here are some examples of how to use the methods:
 use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
+// Get total sessions for the last 7 days:
+$data = Analytics::sessions(Period::days(7));
+
 // Get the average session duration for the last 7 days:
 $data = Analytics::averageSessionDuration(Period::days(7));
 

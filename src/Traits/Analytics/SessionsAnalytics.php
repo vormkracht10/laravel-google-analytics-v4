@@ -7,6 +7,23 @@ use Vormkracht10\Analytics\Period;
 
 trait SessionsAnalytics
 {
+
+    /**
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function sessions(Period $period): int
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions');
+
+        $result = $this->getReport($googleAnalytics)
+            ->dataTable;
+
+        return (int) Arr::first(Arr::flatten($result));
+    }
+
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
