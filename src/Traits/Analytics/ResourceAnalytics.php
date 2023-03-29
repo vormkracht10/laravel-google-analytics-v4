@@ -12,7 +12,7 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
-            ->addDimensions('pageReferrer')
+            ->addDimensions('pageReferrer', 'pageTitle')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
@@ -52,6 +52,19 @@ trait ResourceAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
             ->addDimensions('sessionSourceMedium')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
+
+    public function getTopSearches(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('searchTerm')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
