@@ -134,7 +134,7 @@ trait ViewsAnalytics
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
-            ->addDimensions('pageTitle', 'fullPageUrl')
+            ->addDimensions('pageTitle', 'pageReferrer')
             ->orderByMetric('screenPageViews', Direction::DESC)
             ->limit($limit);
 
