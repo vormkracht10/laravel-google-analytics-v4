@@ -258,12 +258,12 @@ Methods to retrieve realtime analytics data for your website or application. You
 
 Here are some examples of how to use the methods:
 
-````php
+```php
 use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the total active users for the last 30 minutes:
-$data = Analytics::totalActiveUsers();
+$data = Analytics::activeUsers();
 ```
 
 ### Resource Analytics
