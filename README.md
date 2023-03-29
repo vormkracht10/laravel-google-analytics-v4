@@ -263,7 +263,7 @@ use Vormkracht10\Analytics\Facades\Analytics;
 use Vormkracht10\Analytics\Period;
 
 // Get the total active users for the last 30 minutes:
-$data = Analytics::totalActiveUsers();
+$data = Analytics::activeUsers();
 ```
 
 ### Resource Analytics
