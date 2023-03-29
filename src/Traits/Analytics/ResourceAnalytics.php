@@ -25,7 +25,7 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
-            ->addDimensions('landingPage')
+            ->addDimensions('landingPage', 'pageTitle')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
