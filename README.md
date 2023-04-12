@@ -7,7 +7,7 @@
 
 ## About Laravel Google Analytics v4
 
-Laravel Google Analytics v4 is a Laravel package that allows you to easily integrate Google Analytics v4 into your Laravel application. With this package, you can retrieve all pageviews, events, ecommerce transactions and more from Google Analytics V4 using the API.
+Retrieve all data like pageviews, events, ecommerce transactions and more from Google Analytics version 4 using the Google API.
 
 ## Installation
 
