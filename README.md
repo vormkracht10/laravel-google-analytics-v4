@@ -282,11 +282,14 @@ $data = Analytics::getTopReferrers(period: Period::days(14), limit: 10);
 // Get the top 10 referrals for the last 14 days, grouped by page title:
 $data = Analytics::getTopReferrersByPageTitle(period: Period::days(14), limit: 10);
 
+// Get the top 20 landing pages by page title for the last 14 days:
+$data = Analytics::getTopLandingPagesByPageTitle(period: Period::days(14), limit: 20);
+
 // Get the top 20 landing pages for the last 14 days:
 $data = Analytics::getTopLandingPages(period: Period::days(14), limit: 20);
 
-// Get the top 20 landing pages with query string for the last 14 days, grouped by page title:
-$data = Analytics::getLandingPagesPlusQueryString(period: Period::days(14), limit: 20);
+// Get the top 20 landing pages with query string by page title for the last 14 days, grouped by page title:
+$data = Analytics::getLandingPagesPlusQueryStringAByPageTitle(period: Period::days(14), limit: 20);
 
 // Get the top 5 traffic sources for the last 14 days:
 $data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
