@@ -30,10 +30,10 @@ class Analytics
 
     public GoogleAnalyticsService $googleAnalytics;
 
-    public function __construct()
+    public function __construct($propertyId = null)
     {
         $this->googleAnalytics = new GoogleAnalyticsService();
-        $this->propertyId = config('google-analytics.property_id') ?? null;
+        $this->propertyId = $propertyId ?? config('google-analytics.property_id') ?? null;
         $this->credentials = config('google-analytics.credentials') ?? null;
     }
 

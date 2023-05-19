@@ -12,6 +12,19 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
+            ->addDimensions('pageReferrer')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
+
+    public function getTopReferrersByPageTitle(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
             ->addDimensions('pageReferrer', 'pageTitle')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);

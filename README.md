@@ -279,6 +279,9 @@ use Vormkracht10\Analytics\Period;
 // Get the top 10 referrals for the last 14 days:
 $data = Analytics::getTopReferrers(period: Period::days(14), limit: 10);
 
+Get// Get the top 10 referrals for the last 14 days, grouped by page title:
+$data = Analytics::getTopReferrersByPageTitle(period: Period::days(14), limit: 10);
+
 // Get the top 20 landing pages for the last 14 days:
 $data = Analytics::getTopLandingPages(period: Period::days(14), limit: 20);
 
@@ -287,7 +290,7 @@ $data = Analytics::getTopTrafficSources(period: Period::days(14), limit: 5);
 
 // Get the top 10 backlinks for the last 14 days:
 $data = Analytics::getTopBacklinks(period: Period::days(14), limit: 10);
-````
+```
 
 ### Sessions Analytics
 
