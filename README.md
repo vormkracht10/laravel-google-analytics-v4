@@ -1,8 +1,7 @@
 # Laravel Google Analytics
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics-v4/run-tests?label=tests)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics-v4/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Tests](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
 
 ## About Laravel Google Analytics v4
