@@ -46,6 +46,19 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
+    public function getLandingPagesPlusQueryString(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('landingPagePlusQueryString', 'pageTitle')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
+
     public function getTopTrafficSources(Period $period, int $limit): array
     {
         $googleAnalytics = $this->googleAnalytics
