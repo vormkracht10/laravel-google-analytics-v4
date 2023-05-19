@@ -1,13 +1,13 @@
 # Laravel Google Analytics
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics/run-tests?label=tests)](https://github.com/vormkracht10/laravel-google-analytics/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/vormkracht10/laravel-google-analytics/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics-v4/run-tests?label=tests)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vormkracht10/laravel-google-analytics-v4/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
 
 ## About Laravel Google Analytics v4
 
-Laravel Google Analytics v4 is a Laravel package that allows you to easily integrate Google Analytics v4 into your Laravel application. With this package, you can track pageviews, events, ecommerce transactions, and more, all with the latest version of Google Analytics.
+Retrieve all data like pageviews, events, ecommerce transactions and more from Google Analytics version 4 using the Google API.
 
 ## Installation
 
