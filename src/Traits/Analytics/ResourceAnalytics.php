@@ -59,18 +59,18 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-        public function getLandingPages(Period $period, int $limit): array
-        {
-            $googleAnalytics = $this->googleAnalytics
-                ->setDateRange($period)
-                ->addMetrics('sessions')
-                ->addDimensions('landingPage')
-                ->orderByMetric('sessions', Direction::DESC)
-                ->limit($limit);
+    public function getLandingPages(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('landingPage')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
 
-            return $this->getReport($googleAnalytics)
-                ->dataTable;
-        }
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
 
     public function getTopTrafficSources(Period $period, int $limit): array
     {
