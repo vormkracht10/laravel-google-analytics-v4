@@ -29,7 +29,6 @@ trait SessionsAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
             ->addDimensions('pagePath')
-            ->orderByDimension('sessions')
             ->keepEmptyRows(true);
 
         return $this->getReport($googleAnalytics)
