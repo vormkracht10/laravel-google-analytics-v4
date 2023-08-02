@@ -20,6 +20,8 @@ trait ViewsAnalytics
         if ($path) {
             $googleAnalytics->addDimension('pagePath')
                 ->addFilter('pagePath', 'EXACT', $path);
+
+            exit;
         }
 
         $result = $this->getReport($googleAnalytics)
