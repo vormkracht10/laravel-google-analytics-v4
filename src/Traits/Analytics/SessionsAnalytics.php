@@ -15,13 +15,25 @@ trait SessionsAnalytics
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
-            ->addMetrics('sessions')
-            ->addDimensions('pagePath');
+            ->addMetrics('sessions');
 
         $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
         return (int) Arr::first(Arr::flatten($result));
+    }
+
+    public function sessionsPerPage(Period $period): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('pagePath')
+            ->orderByDimension('sessions')
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
     }
 
     /**
