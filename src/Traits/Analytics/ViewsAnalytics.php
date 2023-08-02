@@ -22,6 +22,8 @@ trait ViewsAnalytics
                 ->addFilter('pagePath', 'EXACT', $path);
         }
 
+        dd($googleAnalytics);
+
         $result = $this->getReport($googleAnalytics)
             ->dataTable;
 
