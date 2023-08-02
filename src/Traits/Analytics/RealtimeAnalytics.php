@@ -23,7 +23,7 @@ trait RealtimeAnalytics
 
         if ($path) {
             $googleAnalytics->addDimension('pagePath')
-            ->addMetricFilter('pagePath', 'EXACT', $path);
+                ->addMetricFilter('pagePath', 'EXACT', $path);
         }
 
         $result = $this->getReport($googleAnalytics)
