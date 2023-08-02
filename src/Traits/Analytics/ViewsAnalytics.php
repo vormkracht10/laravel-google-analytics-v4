@@ -12,7 +12,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViews(Period $period, ?string $path = null): int
+    public function totalViews(Period $period, string $path = null): int
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews');
