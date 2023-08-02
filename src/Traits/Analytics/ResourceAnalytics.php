@@ -33,6 +33,19 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
+    public function getTopReferrersByPagePath(Period $period, int $limit): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('pageReferrer', 'pagePath')
+            ->orderByMetric('sessions', Direction::DESC)
+            ->limit($limit);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
+
     public function getLandingPagesByPageTitle(Period $period, int $limit): array
     {
         $googleAnalytics = $this->googleAnalytics
