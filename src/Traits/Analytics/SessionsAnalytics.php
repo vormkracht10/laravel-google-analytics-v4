@@ -15,8 +15,8 @@ trait SessionsAnalytics
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
-            ->addDimensions('pagePath')
-            ->addMetrics('sessions');
+            ->addMetrics('sessions')
+            ->addDimensions('pagePath');
 
         $result = $this->getReport($googleAnalytics)
             ->dataTable;
