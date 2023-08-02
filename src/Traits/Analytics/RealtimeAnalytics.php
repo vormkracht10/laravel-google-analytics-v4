@@ -11,7 +11,7 @@ trait RealtimeAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function activeUsers(Period|null $period = null): int
+    public function activeUsers(Period|null $period = null, string $path): int
     {
         if (is_null($period)) {
             $period = Period::minutes(30);
@@ -20,6 +20,11 @@ trait RealtimeAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('activeUsers');
+
+        if ($path) {
+            $googleAnalytics->addDimension('pagePath')
+                ->addFilter('pagePath', 'EXACT', $path);
+        }
 
         $result = $this->getReport($googleAnalytics)
             ->dataTable;
