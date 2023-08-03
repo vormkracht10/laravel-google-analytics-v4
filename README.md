@@ -3,6 +3,9 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
 [![Tests](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-google-analytics-v4.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/vormkracht10/laravel-google-analytics-v4)](https://packagist.org/packages/vormkracht10/laravel-google-analytics-v4)
+[![PHPStan](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/phpstan.yml/badge.svg?branch=main)](https://github.com/vormkracht10/laravel-google-analytics-v4/actions/workflows/phpstan.yml)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/vormkracht10/laravel-google-analytics-v4)
 
 ## About Laravel Google Analytics v4
 
