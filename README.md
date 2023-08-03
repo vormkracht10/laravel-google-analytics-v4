@@ -131,6 +131,9 @@ $data = Analytics::totalUsersByGender(Period::weeks(7));
 
 // Get the total users by age group for the last 7 weeks
 $data = Analytics::totalUsersByAgeGroup(Period::weeks(7));
+
+// Get the total users by date per page for the last 7 weeks:
+$data = Analytics::totalUsersByDatePerPage(Period::weeks(7));
 ```
 
 ### Device and OS Analytics
@@ -278,6 +281,9 @@ use Vormkracht10\Analytics\Period;
 // Get the top 10 referrals for the last 14 days:
 $data = Analytics::getTopReferrers(period: Period::days(14), limit: 10);
 
+// Get the top 10 referrals for the last 14 days, by page path:
+$data = Analytics::getTopReferrersByPagePath(period: Period::days(14), limit: 10);
+
 // Get the top 10 referrals for the last 14 days, grouped by page title:
 $data = Analytics::getTopReferrersByPageTitle(period: Period::days(14), limit: 10);
 
@@ -309,6 +315,9 @@ use Vormkracht10\Analytics\Period;
 
 // Get total sessions for the last 7 days:
 $data = Analytics::sessions(Period::days(7));
+
+// Get total sessions for the last 7 days per page:
+$data = Analytics::sessionsPerPage(Period::days(7));
 
 // Get the average session duration for the last 7 days:
 $data = Analytics::averageSessionDuration(Period::days(7));

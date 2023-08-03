@@ -23,6 +23,18 @@ trait SessionsAnalytics
         return (int) Arr::first(Arr::flatten($result));
     }
 
+    public function sessionsPerPage(Period $period): array
+    {
+        $googleAnalytics = $this->googleAnalytics
+            ->setDateRange($period)
+            ->addMetrics('sessions')
+            ->addDimensions('pagePath')
+            ->keepEmptyRows(true);
+
+        return $this->getReport($googleAnalytics)
+            ->dataTable;
+    }
+
     /**
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
