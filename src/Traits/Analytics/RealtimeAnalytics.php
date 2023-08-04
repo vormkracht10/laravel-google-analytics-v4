@@ -18,12 +18,8 @@ trait RealtimeAnalytics
         }
 
         $googleAnalytics = $this->googleAnalytics
-            ->setMinuteRange(
-                name: null,
-                start: 29,
-                end: 0
-            )
-            ->addMetrics('activeUsers');
+            ->setDateRange($period)
+            ->addMetrics('active1DayUsers');
 
         if ($path) {
             $googleAnalytics->addDimension('pagePath');
