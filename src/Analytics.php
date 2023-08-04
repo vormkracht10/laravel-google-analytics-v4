@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
-use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 use Vormkracht10\Analytics\Service\GoogleAnalyticsService;
 use Vormkracht10\Analytics\Traits\Analytics\DemographicAnalytics;
 use Vormkracht10\Analytics\Traits\Analytics\DevicesAnalytics;
