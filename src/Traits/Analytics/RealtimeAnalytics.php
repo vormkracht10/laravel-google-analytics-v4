@@ -11,7 +11,7 @@ trait RealtimeAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function activeUsers(Period $period = null, string $path = null): int
+    public function activeUsers(Period $period = null, string $path = null): int|array
     {
         if (is_null($period)) {
             $period = Period::minutes(30);
