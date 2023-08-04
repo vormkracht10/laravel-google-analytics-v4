@@ -21,7 +21,7 @@ trait MinuteRangeTrait
         return $this;
     }
 
-    public function setMinuteRanges(...$items): self
+    public function setMinuteRanges(array ...$items): self
     {
         $this->minuteRanges = [];
 
