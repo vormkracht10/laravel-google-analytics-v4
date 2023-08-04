@@ -20,7 +20,7 @@ trait RealtimeAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setMinuteRange(
                 name: null,
-                start: 30,
+                start: 29,
                 end: 0
             )
             ->addMetrics('activeUsers');
