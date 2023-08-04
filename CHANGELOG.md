@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-google-analytics` will be documented in this file.
 
+## v0.5.0 - 2023-08-04
+
+### What's Changed
+
+- Realtime Reports by @Baspa in https://github.com/vormkracht10/laravel-google-analytics-v4/pull/21
+
+**Full Changelog**: https://github.com/vormkracht10/laravel-google-analytics-v4/compare/v0.4.0...v0.5.0
+
 ## v0.4.0 - 2023-08-03
 
 ### What's Changed
