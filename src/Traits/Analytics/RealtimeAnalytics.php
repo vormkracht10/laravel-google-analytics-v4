@@ -32,6 +32,7 @@ trait RealtimeAnalytics
         $result = $this->getRealtimeReport($googleAnalytics)
             ->dataTable;
 
-        return (int) Arr::first(Arr::flatten($result));
+        return $result;
+        // return (int) Arr::first(Arr::flatten($result));
     }
 }
