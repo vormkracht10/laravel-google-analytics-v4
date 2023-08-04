@@ -19,7 +19,7 @@ trait RealtimeAnalytics
 
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
-            ->addMetrics('active1DayUsers');
+            ->addMetrics('activeUsers');
 
         if ($path) {
             $googleAnalytics->addDimension('pagePath');
