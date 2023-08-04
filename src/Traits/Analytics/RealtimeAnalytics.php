@@ -26,7 +26,7 @@ trait RealtimeAnalytics
             ->addMetrics('activeUsers');
 
         if ($path) {
-            $googleAnalytics->addDimension('pagePath');
+            $googleAnalytics->addDimension('pageTitle');
         }
 
         $result = $this->getRealtimeReport($googleAnalytics)
