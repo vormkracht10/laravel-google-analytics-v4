@@ -11,21 +11,31 @@ trait RealtimeAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function activeUsers(Period $period = null, string $path = null): int
+    public function activeUsers(Period $period = null, string $path = null): int|array
     {
         if (is_null($period)) {
             $period = Period::minutes(30);
         }
 
         $googleAnalytics = $this->googleAnalytics
-            ->setDateRange($period)
+            ->setMinuteRange(
+                name: null,
+                start: 29,
+                end: 0,
+            )
             ->addMetrics('activeUsers');
 
         if ($path) {
-            $googleAnalytics->addDimension('pagePath');
+            // Filter by path is not possible yet on the Realtime API. Currently it is only possible to filter by unifiedScreenName.
+            // @see https://stackoverflow.com/a/70684184/7603806
+            // @see https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema#dimensions
+            $googleAnalytics->addDimension('unifiedScreenName');
+
+            return $this->getRealtimeReport($googleAnalytics)
+                ->dataTable;
         }
 
-        $result = $this->getReport($googleAnalytics)
+        $result = $this->getRealtimeReport($googleAnalytics)
             ->dataTable;
 
         return (int) Arr::first(Arr::flatten($result));

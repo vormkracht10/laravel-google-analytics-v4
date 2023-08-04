@@ -72,9 +72,10 @@ class Analytics
     {
         $client = $this->getClient();
 
-        $response = $client->runReport([
+        $parameters = [
             'property' => 'properties/'.$this->getPropertyId(),
             'dateRanges' => $googleAnalytics->dateRanges,
+            'minuteRanges' => $googleAnalytics->minuteRanges,
             'dimensions' => $googleAnalytics->dimensions,
             'metrics' => $googleAnalytics->metrics,
             'orderBys' => $googleAnalytics->orderBys,
@@ -84,7 +85,33 @@ class Analytics
             'limit' => $googleAnalytics->limit,
             'offset' => $googleAnalytics->offset,
             'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
-        ]);
+        ];
+
+        $response = $client->runReport($parameters);
+
+        return $this->formatResponse($response);
+    }
+
+    public function getRealtimeReport(GoogleAnalyticsService $googleAnalytics): AnalyticsResponse
+    {
+        $client = $this->getClient();
+
+        $parameters = [
+            'property' => 'properties/'.$this->getPropertyId(),
+            'dateRanges' => $googleAnalytics->dateRanges,
+            'minuteRanges' => $googleAnalytics->minuteRanges,
+            'dimensions' => $googleAnalytics->dimensions,
+            'metrics' => $googleAnalytics->metrics,
+            'orderBys' => $googleAnalytics->orderBys,
+            'metricAggregations' => $googleAnalytics->metricAggregations,
+            'dimensionFilter' => $googleAnalytics->dimensionFilter,
+            'metricFilter' => $googleAnalytics->metricFilter,
+            'limit' => $googleAnalytics->limit,
+            'offset' => $googleAnalytics->offset,
+            'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
+        ];
+
+        $response = $client->runRealtimeReport($parameters);
 
         return $this->formatResponse($response);
     }

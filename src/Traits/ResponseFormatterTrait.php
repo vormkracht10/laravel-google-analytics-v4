@@ -2,6 +2,7 @@
 
 namespace Vormkracht10\Analytics\Traits;
 
+use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 use Google\Analytics\Data\V1beta\RunReportResponse;
 use Vormkracht10\Analytics\AnalyticsResponse;
 
@@ -11,7 +12,7 @@ trait ResponseFormatterTrait
 
     public array $dimensionHeaders = [];
 
-    public function formatResponse(RunReportResponse $response): AnalyticsResponse
+    public function formatResponse(RunReportResponse|RunRealtimeReportResponse $response): AnalyticsResponse
     {
         $this->setDimensionAndMetricHeaders($response);
 
@@ -21,7 +22,7 @@ trait ResponseFormatterTrait
             ->setMetricAggregationsTable($this->getMetricAggregationsTable($response));
     }
 
-    private function setDimensionAndMetricHeaders(RunReportResponse $response): void
+    private function setDimensionAndMetricHeaders(RunReportResponse|RunRealtimeReportResponse $response): void
     {
         foreach ($response->getDimensionHeaders() as $dimensionHeader) {
             $this->dimensionHeaders[] = $dimensionHeader->getName();
@@ -32,7 +33,7 @@ trait ResponseFormatterTrait
         }
     }
 
-    private function getTable(RunReportResponse $response): array
+    private function getTable(RunReportResponse|RunRealtimeReportResponse $response): array
     {
         $table = [];
 
@@ -53,7 +54,7 @@ trait ResponseFormatterTrait
         return $table;
     }
 
-    private function getMetricAggregationsTable(RunReportResponse $response): array
+    private function getMetricAggregationsTable(RunReportResponse|RunRealtimeReportResponse $response): array
     {
         $aggregationMethods = [
             'getTotals',
