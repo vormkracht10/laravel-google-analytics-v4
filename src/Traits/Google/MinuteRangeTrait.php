@@ -29,7 +29,7 @@ trait MinuteRangeTrait
             $this->minuteRanges[] = new MinuteRange([
                 'name' => $item['name'],
                 'startMinutesAgo' => $item['start'],
-                'endMinutesAgo' => $item['end']
+                'endMinutesAgo' => $item['end'],
             ]);
         }
 
