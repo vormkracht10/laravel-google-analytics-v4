@@ -18,7 +18,11 @@ trait RealtimeAnalytics
         }
 
         $googleAnalytics = $this->googleAnalytics
-            ->setDateRange($period)
+            ->setMinuteRange(
+                name: null,
+                start: 30,
+                end: 0
+            )
             ->addMetrics('activeUsers');
 
         if ($path) {
