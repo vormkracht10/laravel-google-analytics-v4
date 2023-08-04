@@ -18,14 +18,18 @@ trait RealtimeAnalytics
         }
 
         $googleAnalytics = $this->googleAnalytics
-            ->setDateRange($period)
+            ->setMinuteRange(
+                name: null,
+                start: 29,
+                end: 0,
+            )
             ->addMetrics('activeUsers');
 
         if ($path) {
             $googleAnalytics->addDimension('pagePath');
         }
 
-        $result = $this->getReport($googleAnalytics)
+        $result = $this->getRealtimeReport($googleAnalytics)
             ->dataTable;
 
         return (int) Arr::first(Arr::flatten($result));
