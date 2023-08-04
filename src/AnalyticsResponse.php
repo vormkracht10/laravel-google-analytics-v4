@@ -7,7 +7,7 @@ use Google\Analytics\Data\V1beta\RunReportResponse;
 
 class AnalyticsResponse
 {
-    public RunReportResponse $response;
+    public RunReportResponse|RunRealtimeReportResponse $response;
 
     public array $dataTable;
 
