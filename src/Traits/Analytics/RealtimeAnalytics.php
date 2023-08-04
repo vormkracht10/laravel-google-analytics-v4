@@ -26,13 +26,18 @@ trait RealtimeAnalytics
             ->addMetrics('activeUsers');
 
         if ($path) {
+            // Filter by path is not possible yet on the Realtime API. Currently it is only possible to filter by unifiedScreenName.
+            // @see https://stackoverflow.com/a/70684184/7603806
+            // @see https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema#dimensions
             $googleAnalytics->addDimension('unifiedScreenName');
+
+            return $this->getRealtimeReport($googleAnalytics)
+                ->dataTable;
         }
 
         $result = $this->getRealtimeReport($googleAnalytics)
             ->dataTable;
 
-        return $result;
-        // return (int) Arr::first(Arr::flatten($result));
+        return (int) Arr::first(Arr::flatten($result));
     }
 }
