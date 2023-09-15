@@ -15,14 +15,14 @@ use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
 
 class Analytics
 {
-    use ResponseFormatterTrait,
-        ViewsAnalytics,
+    use DemographicAnalytics,
+        DevicesAnalytics,
+        RealtimeAnalytics,
+        ResourceAnalytics,
+        ResponseFormatterTrait,
         SessionsAnalytics,
         UsersAnalytics,
-        DevicesAnalytics,
-        DemographicAnalytics,
-        ResourceAnalytics,
-        RealtimeAnalytics;
+        ViewsAnalytics;
 
     public ?int $propertyId = null;
 

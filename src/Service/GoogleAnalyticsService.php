@@ -15,12 +15,12 @@ use Vormkracht10\Analytics\Traits\ResponseFormatterTrait;
 class GoogleAnalyticsService
 {
     use DateRangeTrait,
-        MinuteRangeTrait,
-        MetricTrait,
         DimensionTrait,
-        OrderByTrait,
-        MetricAggregationTrait,
         FilterByTrait,
-        RowConfigTrait,
-        ResponseFormatterTrait;
+        MetricAggregationTrait,
+        MetricTrait,
+        MinuteRangeTrait,
+        OrderByTrait,
+        ResponseFormatterTrait,
+        RowConfigTrait;
 }
