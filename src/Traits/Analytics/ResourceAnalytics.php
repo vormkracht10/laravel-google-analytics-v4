@@ -12,7 +12,7 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
-            ->addDimensions('sessionSource', 'sessionDefaultChannelGrouping')
+            ->addDimensions('sessionSource')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
@@ -25,7 +25,7 @@ trait ResourceAnalytics
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
             ->addMetrics('sessions')
-            ->addDimensions('sessionSource', 'sessionDefaultChannelGrouping', 'pageTitle')
+            ->addDimensions('sessionSource', 'pageTitle')
             ->orderByMetric('sessions', Direction::DESC)
             ->limit($limit);
 
