@@ -17,13 +17,13 @@ class Period
             throw InvalidPeriod::startDateCannotBeGreaterThanEndDate($startDate, $endDate);
         }
 
-        $this->startDate = $startDate;
-        $this->endDate = $endDate;
+        $this->startDate = Carbon::instance($startDate);
+        $this->endDate = Carbon::instance($endDate);
     }
 
     public static function make(Carbon $startDate, Carbon $endDate): self
     {
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function days(int $days): self
@@ -31,7 +31,7 @@ class Period
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subDays($days);
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function weeks(int $weeks): self
@@ -39,7 +39,7 @@ class Period
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subWeeks($weeks)->startOfDay();
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function months(int $months): self
@@ -47,7 +47,7 @@ class Period
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subMonths($months)->startOfDay();
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function years(int $years): self
@@ -55,7 +55,7 @@ class Period
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subYears($years)->startOfDay();
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function since(Carbon $startDate): self
@@ -68,7 +68,7 @@ class Period
         $endDate = Carbon::now();
         $startDate = Carbon::now()->subHours($hours);
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 
     public static function minutes(int $minutes): self
@@ -76,6 +76,6 @@ class Period
         $endDate = Carbon::now();
         $startDate = Carbon::now()->subMinutes($minutes);
 
-        return new self($startDate, $endDate);
+        return new self(Carbon::instance($startDate), Carbon::instance($endDate));
     }
 }
