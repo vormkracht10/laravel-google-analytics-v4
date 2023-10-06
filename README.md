@@ -99,6 +99,8 @@ Period::create($startDate, $endDate);
 Period::since(Carbon::now()->subDays(7));
 ```
 
+> **Note:** Using multiple Carbon objects in the `Period::create()` method may possibly result in unexpected behaviour. It is recommended to pass the start and end date as a separate Carbon instance. For example: `Period::create(Carbon::instance($startDate), Carbon::instance($endDate))`. This will ensure that the start and end date are set correctly.
+
 ## Available methods
 
 ### Demographic Analytics
