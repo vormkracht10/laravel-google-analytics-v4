@@ -10,6 +10,12 @@ trait MetricTrait
 
     public function addMetric(string $name): self
     {
+        foreach ($this->metrics as $metric) {
+            if ($metric->getName() === $name) {
+                return $this;
+            }
+        }
+
         $this->metrics[] = new Metric([
             'name' => $name,
         ]);
