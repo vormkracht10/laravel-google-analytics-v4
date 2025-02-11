@@ -32,7 +32,7 @@ class Analytics
 
     public function __construct(?int $propertyId = null)
     {
-        $this->googleAnalytics = new GoogleAnalyticsService();
+        $this->googleAnalytics = new GoogleAnalyticsService;
         $this->propertyId = $propertyId ?? config('google-analytics.property_id') ?? null;
         $this->credentials = config('google-analytics.credentials') ?? null;
     }
