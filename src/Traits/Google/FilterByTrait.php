@@ -131,7 +131,7 @@ trait FilterByTrait
 
     private function getNumeric(int|string|float $value): NumericValue
     {
-        $numeric = new NumericValue();
+        $numeric = new NumericValue;
 
         if (is_float($value)) {
             $numeric->setDoubleValue($value);

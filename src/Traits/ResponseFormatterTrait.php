@@ -16,7 +16,7 @@ trait ResponseFormatterTrait
     {
         $this->setDimensionAndMetricHeaders($response);
 
-        return (new AnalyticsResponse())
+        return (new AnalyticsResponse)
             ->setResponse($response)
             ->setDataTable($this->getTable($response))
             ->setMetricAggregationsTable($this->getMetricAggregationsTable($response));
