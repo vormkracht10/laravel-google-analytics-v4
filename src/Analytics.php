@@ -102,10 +102,12 @@ class Analytics
     }
 
     /**
-     * Build the request parameters, dropping fields that were never set. The
-     * native protobuf extension rejects null (and empty) values that the
-     * pure-PHP implementation silently tolerates, so unset fields must be
-     * omitted rather than passed through as null.
+     * Build the request parameters using the protobuf field names (snake_case)
+     * and drop fields that were never set. The native protobuf extension is
+     * strict about both: it rejects camelCase keys ("No such field dateRanges")
+     * and null values ("Cannot convert '' to string"), while the pure-PHP
+     * implementation silently tolerates them. Fields that do not apply to a
+     * given request type stay empty and are filtered out here.
      *
      * @return array<string, mixed>
      */
@@ -113,17 +115,17 @@ class Analytics
     {
         return array_filter([
             'property' => 'properties/'.$this->getPropertyId(),
-            'dateRanges' => $googleAnalytics->dateRanges,
-            'minuteRanges' => $googleAnalytics->minuteRanges,
+            'date_ranges' => $googleAnalytics->dateRanges,
+            'minute_ranges' => $googleAnalytics->minuteRanges,
             'dimensions' => $googleAnalytics->dimensions,
             'metrics' => $googleAnalytics->metrics,
-            'orderBys' => $googleAnalytics->orderBys,
-            'metricAggregations' => $googleAnalytics->metricAggregations,
-            'dimensionFilter' => $googleAnalytics->dimensionFilter,
-            'metricFilter' => $googleAnalytics->metricFilter,
+            'order_bys' => $googleAnalytics->orderBys,
+            'metric_aggregations' => $googleAnalytics->metricAggregations,
+            'dimension_filter' => $googleAnalytics->dimensionFilter,
+            'metric_filter' => $googleAnalytics->metricFilter,
             'limit' => $googleAnalytics->limit,
             'offset' => $googleAnalytics->offset,
-            'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
+            'keep_empty_rows' => $googleAnalytics->keepEmptyRows,
         ], fn (mixed $value): bool => $value !== null && $value !== []);
     }
 }
