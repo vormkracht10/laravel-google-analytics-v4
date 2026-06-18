@@ -11,11 +11,7 @@ trait MinuteRangeTrait
     public function setMinuteRange(?string $name, ?int $start, ?int $end): self
     {
         $this->minuteRanges = [
-            new MinuteRange([
-                'name' => $name,
-                'start_minutes_ago' => $start,
-                'end_minutes_ago' => $end,
-            ]),
+            $this->makeMinuteRange($name, $start, $end),
         ];
 
         return $this;
@@ -26,14 +22,25 @@ trait MinuteRangeTrait
         $this->minuteRanges = [];
 
         foreach ($items as $item) {
-            $this->minuteRanges[] = new MinuteRange([
-                'name' => $item['name'],
-                'start_minutes_ago' => $item['start'],
-                'end_minutes_ago' => $item['end'],
-            ]);
+            $this->minuteRanges[] = $this->makeMinuteRange(
+                $item['name'] ?? null,
+                $item['start'] ?? null,
+                $item['end'] ?? null,
+            );
         }
 
         return $this;
+    }
+
+    private function makeMinuteRange(?string $name, ?int $start, ?int $end): MinuteRange
+    {
+        // The native protobuf extension rejects a null name with
+        // "Cannot convert '' to string", so only set it when provided.
+        return new MinuteRange(array_filter([
+            'name' => $name,
+            'start_minutes_ago' => $start,
+            'end_minutes_ago' => $end,
+        ], fn (mixed $value): bool => $value !== null));
     }
 
     private function validateStartAndEnd(?int $start, ?int $end): void

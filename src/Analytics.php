@@ -83,22 +83,7 @@ class Analytics
     {
         $client = $this->getClient();
 
-        $parameters = [
-            'property' => 'properties/'.$this->getPropertyId(),
-            'dateRanges' => $googleAnalytics->dateRanges,
-            'minuteRanges' => $googleAnalytics->minuteRanges,
-            'dimensions' => $googleAnalytics->dimensions,
-            'metrics' => $googleAnalytics->metrics,
-            'orderBys' => $googleAnalytics->orderBys,
-            'metricAggregations' => $googleAnalytics->metricAggregations,
-            'dimensionFilter' => $googleAnalytics->dimensionFilter,
-            'metricFilter' => $googleAnalytics->metricFilter,
-            'limit' => $googleAnalytics->limit,
-            'offset' => $googleAnalytics->offset,
-            'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
-        ];
-
-        $response = $client->runReport(new RunReportRequest($parameters));
+        $response = $client->runReport(new RunReportRequest($this->reportParameters($googleAnalytics)));
 
         return $this->formatResponse($response);
     }
@@ -111,7 +96,22 @@ class Analytics
     {
         $client = $this->getClient();
 
-        $parameters = [
+        $response = $client->runRealtimeReport(new RunRealtimeReportRequest($this->reportParameters($googleAnalytics)));
+
+        return $this->formatResponse($response);
+    }
+
+    /**
+     * Build the request parameters, dropping fields that were never set. The
+     * native protobuf extension rejects null (and empty) values that the
+     * pure-PHP implementation silently tolerates, so unset fields must be
+     * omitted rather than passed through as null.
+     *
+     * @return array<string, mixed>
+     */
+    protected function reportParameters(GoogleAnalyticsService $googleAnalytics): array
+    {
+        return array_filter([
             'property' => 'properties/'.$this->getPropertyId(),
             'dateRanges' => $googleAnalytics->dateRanges,
             'minuteRanges' => $googleAnalytics->minuteRanges,
@@ -124,10 +124,6 @@ class Analytics
             'limit' => $googleAnalytics->limit,
             'offset' => $googleAnalytics->offset,
             'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
-        ];
-
-        $response = $client->runRealtimeReport(new RunRealtimeReportRequest($parameters));
-
-        return $this->formatResponse($response);
+        ], fn (mixed $value): bool => $value !== null && $value !== []);
     }
 }
